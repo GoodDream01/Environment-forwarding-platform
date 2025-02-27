@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.sjcs.mvc.dao.YxpzDao">
+
+	<select id="findByPage" resultType="com.dt.sjcs.mvc.pojo.Yxpz">
+		select * from sj_yxpz
+	</select>
+
+	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.sjcs.mvc.pojo.Yxpz">
+        select * from sj_yxpz where id = #{id}
+    </select>
+
+	<insert id="insert" parameterType="com.dt.sjcs.mvc.pojo.Yxpz">
+    	insert into sj_yxpz (id,dwid,dwmc,yxlx,yxzh,yxmm,sbbh,zdbm,zdmc
+    	)values(#{id},#{dwid},#{dwmc},#{yxlx},#{yxzh},#{yxmm},#{sbbh},#{zdbm},#{zdmc})
+    </insert>
+
+	<update id="update" parameterType="com.dt.sjcs.mvc.pojo.Yxpz">
+    	update sj_yxpz set
+    	dwid = #{dwid},dwmc = #{dwmc},yxlx = #{yxlx},yxzh = #{yxzh},yxmm = #{yxmm},sbbh = #{sbbh},zdbm = #{zdbm},zdmc = #{zdmc}
+    	where id = #{id}
+    </update>
+
+	<delete id="delete">
+    	delete from sj_yxpz where id = #{id}
+    </delete>
+	
+	<select id="findList" resultType="com.dt.sjcs.mvc.pojo.Yxpz">
+		select * from sj_yxpz
+	</select>
+
+	<select id="findSbbh" resultType="java.lang.String">
+		select sbbh from sj_yxpz where dwid = #{dwid}
+	</select>
+
+</mapper>

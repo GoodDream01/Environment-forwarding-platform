@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.cgq.mvc.dao.CgqsjDao">
+
+	<select id="findByPage" resultType="com.dt.cgq.mvc.pojo.Cgqsj">
+		select a.*,b.mc as name from cgq_sj a,cgq_sbgl b where a.sbbh = b.sbbh
+		<choose>
+	       <when test="param.kssj != null and param.kssj != '' and param.jssj != null and param.jssj != ''">
+	          and a.xtsj between DATE_FORMAT(#{param.kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{param.jssj},'%Y-%m-%d'),' 23:59:59')
+	       </when>
+	       <otherwise>
+	          and a.xtsj BETWEEN CONCAT(CURDATE(),' 00:00:00') AND CONCAT(CURDATE(),' 23:59:59')
+	       </otherwise>
+	    </choose>
+	    <if test='param.bj=="1" || param.bj=="3"'>
+	 		 and b.bj = '1'
+		</if> 
+		<if test='param.bj=="2" || param.bj=="4"'>
+	 		 and b.bj = '2'
+		</if>
+	    <if test="(param.ssid==null or param.ssid=='') and param.qyid!=null and param.qyid!=''">
+            and b.qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.qyid}) t2) t3 WHERE (ischild != 0 OR id = #{param.qyid}))
+        </if>
+        <if test="param.ssid!=null and param.ssid!=''">
+            and b.qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.ssid}) t2) t3 WHERE (ischild != 0 OR id = #{param.ssid}))
+        </if>
+        <if test="param.yc!=null and param.yc!=''">
+	 		 and CONVERT(a.pjz,DECIMAL(9,1)) &gt;= 10.8
+		</if>
+ 		<if test="param.sbbh!=null and param.sbbh!=''">
+	 		 and a.sbbh like concat(concat('%', #{param.sbbh}), '%')
+		</if>
+		<if test='param.bj=="0" || param.bj=="1" || param.bj=="3"'>
+	 		 order by a.xtsj desc
+		</if> 
+		<if test='param.bj=="2" || param.bj=="4"'>
+	 		 order by a.time desc
+		</if>
+	</select>
+    
+    <insert id="insert">
+    	 insert into cgq_sj_copy select * from cgq_sj where TO_DAYS(NOW())-TO_DAYS(xtsj) &gt;= 30
+    </insert>
+    
+    <delete id="delete">
+    	delete from cgq_sj where TO_DAYS(NOW())-TO_DAYS(xtsj) &gt;= 30 
+    </delete>
+    
+    <select id="selectByPrimaryKey" resultType="com.dt.cgq.mvc.pojo.Cgqsj">
+		select * from cgq_sj where id = #{id}
+	</select>
+	
+</mapper>

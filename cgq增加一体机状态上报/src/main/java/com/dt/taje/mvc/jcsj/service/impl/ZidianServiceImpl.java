@@ -1,0 +1,273 @@
+package com.dt.taje.mvc.jcsj.service.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.dt.taje.db.ConnDataBase;
+import com.dt.taje.mvc.base.modle.json.DataGridReturn;
+import com.dt.taje.mvc.base.service.impl.CommonServiceImpl;
+import com.dt.taje.mvc.jcsj.dao.ZidianDaoI;
+import com.dt.taje.mvc.jcsj.service.ZidianServiceI;
+import com.dt.taje.utils.ComUtils;
+import com.dt.taje.utils.Tools;
+import com.dt.taje.utils.ui.JSON;
+import com.dt.taje.utils.ui.StringUtil;
+
+@Service
+public class ZidianServiceImpl extends CommonServiceImpl implements ZidianServiceI {
+
+	@Autowired
+	@Qualifier("zidianDaoImpl")
+	ZidianDaoI zidianDaoI;
+	
+	public void setZidianDaoI(ZidianDaoI zidianDaoI) {
+		this.zidianDaoI = zidianDaoI;
+	}
+
+	@Override
+	public void getList(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		String sql = "";
+		String ZDID = Tools.convNull(request.getParameter("ZDID"));
+		String ZHIMC = Tools.convNull(request.getParameter("ZHIMC"));
+		String ZBZ = Tools.convNull(request.getParameter("ZBZ"));
+		
+		sql = "select * from TB_ZIDIANZHI where 1=1  ";
+		if(!StringUtil.isNullOrEmpty(ZDID)){
+			sql+=" and ZDID = '"+ZDID+"' ";
+		}
+		if(!StringUtil.isNullOrEmpty(ZHIMC)){
+			sql+=" and ZHIMC like '%"+ZHIMC+"%' ";
+		}
+		if(!StringUtil.isNullOrEmpty(ZBZ)){
+			sql+=" and ZBZ like '%"+ZBZ+"%' ";
+		}
+		
+		sql += " order by ZPX ";
+		
+		DataGridReturn gridReturn = getDataGridReturn(sql);
+		ComUtils.datagrid2(response, gridReturn);
+	}
+
+	@Override
+	public void save(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		String json = Tools.convNull(request.getParameter("data"));
+		//System.out.println(json);
+		HashMap hashMap = (HashMap)JSON.Decode(json);
+		
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			ConnDataBase bean0 = new ConnDataBase();
+			conn = bean0.getConn();
+			conn.setAutoCommit(false);
+			
+			String ZID = Tools.convNull((String)hashMap.get("ZID"));
+			String ZDID = Tools.convNull((String)hashMap.get("ZDID"));
+			
+			if(ZID.equals("")){
+				ZID = ComUtils.getUniqueString();
+				hashMap.put("ZID", ZID);
+				
+				String ZHIID = zidianDaoI.getMaxZHIID(ZDID);
+				hashMap.put("ZHIID", ZHIID);
+				
+				String ZPX = zidianDaoI.getMaxZPX(ZDID);
+				hashMap.put("ZPX", ZPX);
+				
+				zidianDaoI.insert(hashMap, conn);
+			}else{
+				zidianDaoI.update(hashMap, conn);
+			}
+			conn.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally{
+			if(ps!=null){
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null){
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void del(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			ConnDataBase bean0 = new ConnDataBase();
+			conn = bean0.getConn();
+			conn.setAutoCommit(false);
+
+		    String idStr = request.getParameter("id");       
+		    if (StringUtil.isNullOrEmpty(idStr)) return;
+		    String[] ids = idStr.split(",");
+		    for (int i = 0, l = ids.length; i < l; i++)
+		    {
+		        String id = ids[i]; 
+		        zidianDaoI.del(id, conn);
+		    } 
+		    
+			conn.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally{
+			if(ps!=null){
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null){
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+
+	@Override
+	public void getById(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		String ZID = Tools.convNull(request.getParameter("ZID"));
+		HashMap hashMap=zidianDaoI.getById(ZID);
+		String json = JSON.Encode(hashMap);
+		ComUtils.PrintWrite(response, json);
+	}
+
+	@Override
+	public void up(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			ConnDataBase bean0 = new ConnDataBase();
+			conn = bean0.getConn();
+			conn.setAutoCommit(false);
+
+		    String id = request.getParameter("id");       
+
+		    zidianDaoI.up(id, conn);
+		    
+			conn.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally{
+			if(ps!=null){
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null){
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void down(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			ConnDataBase bean0 = new ConnDataBase();
+			conn = bean0.getConn();
+			conn.setAutoCommit(false);
+
+		    String id = request.getParameter("id");       
+
+		    zidianDaoI.down(id, conn);
+		    
+			conn.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally{
+			if(ps!=null){
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null){
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+
+}

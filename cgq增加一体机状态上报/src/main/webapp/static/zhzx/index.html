@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var setHphmToCookie = function(param, value){
+        var vdate = new Date();
+        vdate.setDate(vdate.getDate() + 30);
+        var tcysft_new = param + "=" + value + '; expires=' + vdate.toGMTString();
+        document.cookie = tcysft_new;
+    }
+    setHphmToCookie("sft", escape('冀'));
+    var aLink ='';
+</script>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>河北高速集成指挥平台扩充版</title>
+<link href="newIndexFrame/css/main.css" rel="stylesheet" type="text/css">
+<link href="newIndexFrame/css/skin.css" rel="stylesheet" type="text/css">
+<script>
+	    (function(){
+	        /* 
+	         * JS禁止网页被iframe或frameset嵌套 检测到被嵌套时自动跳出框架
+	         * 支持IE、Chrome、Firefox、Opera、Safari等所有浏览器
+	         * 吴先成 www.wuxiancheng.cn www.51-n.com
+	         * 将此段代码放置在<head></head>之间 尽量作为第一段js代码 可以节省渲染时间
+	        */
+	        var isIframed = false;
+	        try{
+	                var topURL = window.top.location.href;
+	                isIframed = topURL !== window.location.href;
+	        }catch(e){
+	                isIframed = true;
+	        }finally{
+	                if(isIframed){
+	                        try{
+	                                window.top.location.replace(window.location.href);
+	                        }catch(e){                                
+	                        }
+	                }
+	        }
+	})();
+</script>
+<script type="text/javascript" src="newIndexFrame/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript" src="js/util/commonUtils.js"></script>
+<script type="text/javascript" src="newIndexFrame/js/mainStyle.js"></script>
+<script type="text/javascript" src="newIndexFrame/js/main.js"></script>
+<script type="text/javascript">
+	//权限结合，用于全屏展示页面
+	var strlist = "menu_tbd_facility_roadPlaceMaintain,,,"+
+            ",,,,"+
+            ",,,menu_tcm_video_realPlay,"+
+            "menu_psm_policeManTrail,menu_psm_policeCarTrail,,,,,"+
+            ",menu_tcm_video_digitPatrol"+",menu_bigScreen_zd,menu_acc_hzjqcx,menu_mapBigScreen_zd,menu_screen_jxtotal,menu_screen_jxzdc";
+
+	var contextPath = "/zhzx";
+	var loginUrl = contextPath + "/login.do?act=showLoginCommon";//注销地址
+		if ("null" == "on") {//单点登录打开
+			loginUrl="null" ;
+		}
+	//修改密码
+    function updatePassword(url){
+        openMidWindow(url,"修改密码",1000,675,true);
+    }
+    
+     //返回登录页面
+    function returnTop(){
+        top.location=loginUrl;//"login.do?act=showLoginCommon";
+    }
+    //进入大屏入口
+    function bigScreenEntrance(){
+    	// window.open("jiangxiScreen.do?act=getScreenGroup");
+    }
+</script>
+	<style>
+		.childMenu:hover{
+			transform:scale(1.4);
+			-ms-transform:scale(1.4); 	/* IE 9 */
+			-moz-transform:scale(1.4); 	/* Firefox */
+			-webkit-transform:scale(1.4); /* Safari 和 Chrome */
+			-o-transform:scale(1.4); 	/* Opera */
+			z-index:2;
+		}
+        .skin1 .menu_iframe .menuBox{
+            z-index: 999;
+            background: rgba(2,34,41,0.9);
+        }
+        .menuBoxMain{
+            width: 220px;
+            height: 100%;
+            left: -200px;
+            overflow-y: auto;
+            z-index: 999;
+        }
+        .menuBox{
+            left: 0;
+        }
+		#menuBoxMainBtn{
+			display: block;
+			position: absolute;
+			width: 20px;
+			height: 83px;
+			background: url("newIndexFrame/images/boxBtnNew.png") no-repeat;
+			right: 0;
+			top: 50%;
+			margin-top: -42px;
+		}
+	</style>
+</head>
+
+<body class="skin3">
+<!--头部开始-->
+<div class="header">
+	<div class="systemName floatL"></div>
+	<div class="bigScreenEntrance floatR hide"><span class="entranceBtn" onclick="bigScreenEntrance()"></span></div>
+	<div class="user floatR relative"><span class="userName">欢迎您！测试用户01<img class="sjx" src="newIndexFrame/images/skin2/showPop.png"/></span><span class="systemTime"></span>
+		<div class="popGrid2 absolute hide">
+			<div class="popCent">
+				<ul class="operateBg">
+					<li><span class="skinChange skinBtn1 selected" onclick="changeSkin(this)"></span><span class="skinChange skinBtn2" onclick="changeSkin(this)"></span><span class="skinChange skinBtn3" onclick="changeSkin(this)"></span><span class="skinChangeName">换肤</span></li>
+					<li class="hide"><a class="download" href="###">操作手册下载</a></li>
+					<li><a class="loginOut" href="javascript:returnTop();">注销</a></li>
+				</ul>
+			</div>
+			<div class="popB"></div>
+		</div>
+	</div>
+	<div class="headerMenuToggle floatR relative">
+		<span class="toggleBtn downBtn absolute" style="width:16px;height:36px;top: 4px;"></span>
+	</div>
+	<div class="headerMenu floatR">
+		<div class="menuRel relative">
+			<div id="menuAAAA" class="childMenu icon00" openTabIndex='0'>
+				<span class="icon"></span>
+				<a class="name" href="javascript:void(0);">首页</a>
+			</div>
+			<div id="menuDT05" class="childMenu openTabIndex icon1" onclick="menuClick(this,&quot;#&quot;,&quot;DT05&quot;,&quot;btn_dt_jqcz&quot;)" style="right: 390px;"><span class="icon"></span><a class="name" href="javascript:void(0);">警情处置</a></div>
+			<div id="menuE01" class="childMenu openTabIndex icon4" onclick="menuClick(this,&quot;#&quot;,&quot;E01&quot;,&quot;menu_vtd_surveillanceSite&quot;)" style="right: 312px;"><span class="icon"></span><a class="name" href="javascript:void(0);">轨迹监控</a></div>
+			<div id="menuDT09" class="childMenu openTabIndex icon2" onclick="menuClick(this,&quot;#&quot;,&quot;DT09&quot;,&quot;btn_dt_jczhpt_zdcl&quot;)" style="right: 234px;"><span class="icon"></span><a class="name" href="javascript:void(0);">重点车管理</a></div>
+			<div id="menuY01" class="childMenu openTabIndex icon5" onclick="menuClick(this,&quot;#&quot;,&quot;Y01&quot;,&quot;menu_acc_cmdCtrl&quot;)" style="right: 156px;"><span class="icon"></span><a class="name" href="javascript:void(0);">警卫任务</a></div>
+			<div id="menuDT07" class="childMenu openTabIndex icon20" onclick="menuClick(this,&quot;#&quot;,&quot;DT07&quot;,&quot;btn_dt_fbsljs&quot;)" style="right: 78px;"><span class="icon"></span><a class="name" href="javascript:void(0);">统计分析</a></div>
+			<div id="menuDT03" class="childMenu openTabIndex icon9" onclick="menuClick(this,&quot;#&quot;,&quot;DT03&quot;,&quot;btn_dt_sqab&quot;)" style="right: 0px;"><span class="icon"></span><a class="name" href="javascript:void(0);">安保专题</a></div>
+		</div>
+	</div>
+	<div class="headerMenuToggle floatR relative">
+		<span class="toggleBtn upBtn absolute" style="width:16px;height:36px;top: 4px;"></span>
+	</div>
+</div>
+<!--头部开始-->
+<!--菜单与iframe开始-->
+<div class="menu_iframe absolute hidden">
+	<div class="relDiv relative">
+		<div class="movePoint absolute">
+			<div class="pointRelDiv relative">
+                <div class="menuBoxMain absolute">
+                    <span id="menuBoxMainBtn" ></span>
+                    <div class="menuBox absolute" onclick="menuClick(this,"","AAAA","main")">
+						<div class="item">
+							<a class="menuTitle selected" href="javascript:void(0);" onclick="menu2Click(this)"><span>首页</span></a>
+							<div class="menu2" style="display: block;">
+							<ul>
+							
+							
+							<li onclick="menu3Click(this)"><a href="javascript:void(0);">首页</a></li>
+							
+							
+							</ul>
+<div id="childMenuDT05"><div class="item"><a class="menuTitle removeTitleIcon" onclick='menu2Click(this, "redirectDT.do?act=redirectDTUrl&amp;xtid=118&amp;linkid=11803100", "DT0502", "警情处置", "btn_dt_jqcz_122", "DT05")' href="javascript:void(0);"><span>警情处置</span></a></div><div class="item"><a class="menuTitle selected" onclick='menu2Click(this, "#", "DT0501", "警情监控", "btn_dt_jqjk_122", "DT05")' href="javascript:void(0);"><span>警情监控</span></a><div class="menu2" style="display: block;"><ul><li onclick='menu3Click(this, "redirectDT.do?act=redirectDTUrl&amp;xtid=119&amp;linkid=11900200", "DT050121", "总队接警录入", "btn_dt_jqcz_122_zdjjlr", "DT05")'><a href="javascript:void(0);">总队接警录入</a></li><li onclick='menu3Click(this, "redirectDT.do?act=redirectDTUrl&amp;xtid=119&amp;linkid=11900300", "DT050122", "总队查询统计", "btn_dt_jqcz_122_zdcxtj", "DT05")'><a href="javascript:void(0);">总队查询统计</a></li><li onclick='menu3Click(this, "redirectDT.do?act=redirectDTUrl&amp;xtid=119&amp;linkid=11900400", "DT050123", "总队实时警情", "btn_dt_jqcz_122_zdssjq", "DT05")'><a href="javascript:void(0);">总队实时警情</a></li><li class="selected" onclick='menu3Click(this, "redirectDT.do?act=redirectDTUrl&amp;xtid=119&amp;linkid=11900500", "DT050124", "总队系统设置", "btn_dt_jqcz_122_zdxtsz", "DT05")'><a href="javascript:void(0);">总队系统设置</a></li></ul></div></div><div class="item"><a class="menuTitle removeTitleIcon" onclick='menu2Click(this, "redirectDT.do?act=redirectDTUrl&amp;xtid=118&amp;linkid=11803300", "DT0503", "预案管理", "btn_dt_yagl_122", "DT05")' href="javascript:void(0);"><span>预案管理</span></a></div></div>
+							</div>
+						</div>
+                            
+                            
+                            
+                                
+                                    
+                                    
+                                    
+                                
+                            
+                        
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                    
+                                
+                            
+                        
+                    </div>
+                </div>
+				<div class="tab_iframe absolute hidden">
+					<div class="tabIframeChildBox relative">
+						<div class="iframeTabBox relative">
+							<div class="leftBtn absolute hide" onclick="tabLeftBtnClick()"></div>
+							<div class="rightBtn absolute hide" onclick="tabrightBtnClick()"></div>
+							<div class="removeAll absolute"><div class="relDiv relative"><span class="operateTitle" onclick="tabHoverToggleDown()">页面操作</span><ul class="tabHoverToggleMenu" onmouseleave="tabHoverToggleUp()"><li class="hide">刷新当前页</li><li onclick="removeAllTabAndTabIframes()">关闭所有</li></ul></div></div>
+							<div class="liBox absolute">
+								<ul class="hidden tabUl">
+									<li id="tabAAAA" style="width: 42px;" class="index selected" onclick="iframeTabClick(this)" openTabIndex='0'><span class="tabName">首&nbsp;&nbsp;页</span></li>
+									<li class="selected" id="tabDT0502" onclick='iframeTabClick(this,"DT05")'><span class="tabName">警情处置</span><span class="tabClose" onclick="removeIframe(this)"></span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="iframeBox absolute">
+							<div class="relDiv iframeTarget">
+								<iframe class="mapFrame" id="mapFrame" name="indexFrame" src="hebeiHome.do?act=getHebeiHomeView" allowtransparency="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="auto"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--菜单与iframe结束-->
+</body>
+<script type="text/javascript">
+    $(".menuBoxMain").hover(function(){
+        $(this).stop().animate({"left":'0px'});
+    },function(){
+        $(this).stop().animate({"left":'-200px'});
+    })
+</script>
+</html>

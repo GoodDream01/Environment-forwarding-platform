@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MzFaceWeb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>MzFaceWeb</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="MzFaceWeb.war">
+      <element id="artifact" artifact-name="MzFaceWeb:war exploded" />
+    </root>
+  </artifact>
+</component>

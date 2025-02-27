@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.sjcs.mvc.dao.SjtjDao">
+
+	<select id="findSbbh" resultType="com.dt.sjcs.mvc.pojo.Sjtj">
+		select distinct(sbid) as name from sj_sjpz
+	</select>
+
+	<select id="TjByDay" resultType="com.dt.sjcs.mvc.pojo.Sjtj">
+		select DATE_FORMAT(a.date, '%Y-%m-%d') as name,
+		ROUND(avg(a.dqwdz),2) as value1,ROUND(avg(a.dqsdz),2) as value2,ROUND(avg(a.dqylz),2) as value3,ROUND(avg(a.fspjz),2) as value4
+		from sj_sjpz_copy a where a.sbid = #{sbid} and a.date between DATE_FORMAT(#{kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{jssj},'%Y-%m-%d'),' 23:59:59')
+		group by name
+	</select>
+
+	<select id="TjByHour" resultType="com.dt.sjcs.mvc.pojo.Sjtj">
+		select DATE_FORMAT(a.date, '%Y-%m-%d %H') AS name,
+		ROUND(avg(a.dqwdz),2) as value1,ROUND(avg(a.dqsdz),2) as value2,ROUND(avg(a.dqylz),2) as value3,ROUND(avg(a.fspjz),2) as value4
+		from sj_sjpz_copy a where a.sbid = #{sbid} and a.date between DATE_FORMAT(#{kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{jssj},'%Y-%m-%d'),' 23:59:59')
+		group by name
+	</select>
+
+</mapper>

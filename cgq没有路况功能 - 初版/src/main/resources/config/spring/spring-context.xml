@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:util="http://www.springframework.org/schema/util"  
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc" 
+    xmlns:cache="http://www.springframework.org/schema/cache" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans.xsd    
+    http://www.springframework.org/schema/context    
+    http://www.springframework.org/schema/context/spring-context.xsd    
+    http://www.springframework.org/schema/mvc    
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/aop    
+    http://www.springframework.org/schema/aop/spring-aop.xsd 
+    http://www.springframework.org/schema/tx    
+    http://www.springframework.org/schema/tx/spring-tx.xsd    
+	http://www.springframework.org/schema/util  
+	http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/jdbc    
+    http://www.springframework.org/schema/jdbc/spring-jdbc.xsd"> 
+
+    <!-- 自动扫描 -->  
+    <context:component-scan base-package="com.dt.zxhygl">
+        <!--不扫描 @Controller注解的类  -->
+        <context:exclude-filter type="annotation"
+         expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+	<context:component-scan base-package="com.dt.cgq">
+		<!--不扫描 @Controller注解的类  -->
+		<context:exclude-filter type="annotation"
+								expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	<context:component-scan base-package="com.dt.pmkz">
+		<!--不扫描 @Controller注解的类  -->
+		<context:exclude-filter type="annotation"
+								expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	<context:component-scan base-package="com.dt.sjcs">
+		<!--不扫描 @Controller注解的类  -->
+		<context:exclude-filter type="annotation"
+								expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	 <context:component-scan base-package="com.dt.app">
+        <!--不扫描 @Controller注解的类  -->
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- <context:property-placeholder location="classpath:config/database.properties"/> -->
+  
+  	<!-- 读取资源文件 -->
+ 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="properties" ref="configProperties" />
+	</bean>
+	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+				<value>classpath:config/database.properties</value>
+				<value>classpath:config/dtsite.properties</value>
+			</list>
+		</property>
+	    <property name="fileEncoding"> 
+	       <value>UTF-8</value> 
+	     </property> 
+	</bean> 
+	<!-- 引入本地数据源 -->
+    <import resource="classpath:config/spring/spring-context-local.xml" />
+    
+	<!-- 缓存配置 -->
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:${ehcache.configFile}" />
+	</bean>
+	<bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManager" ref="cacheManager"/>
+	</bean>
+	
+    <!-- springUtil -->
+    <bean class="com.dt.common.utils.srping.ApplicationContextUtil"></bean>
+    <bean class="com.dt.common.utils.SpringContextHolder"></bean>
+</beans>    

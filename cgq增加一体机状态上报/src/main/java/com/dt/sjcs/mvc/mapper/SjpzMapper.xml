@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.sjcs.mvc.dao.SjpzDao">
+
+	<select id="findByPage" resultType="com.dt.sjcs.mvc.pojo.Sjpz">
+		select * from sj_sjpz where 1=1
+		<if test="param.sbbh!=null and param.sbbh!=''">
+			and FIND_IN_SET(sbid,#{param.sbbh})
+		</if>
+		<choose>
+			<when test="param.kssj != null and param.kssj != '' and param.jssj != null and param.jssj != ''">
+				and date between DATE_FORMAT(#{param.kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{param.jssj},'%Y-%m-%d'),' 23:59:59')
+			</when>
+			<otherwise>
+				and date BETWEEN CONCAT(CURDATE(),' 00:00:00') AND CONCAT(CURDATE(),' 23:59:59')
+			</otherwise>
+		</choose>
+		<if test="param.sbid!=null and param.sbid!=''">
+			and sbid like concat(concat('%', #{param.sbid}), '%')
+		</if>
+		GROUP BY sbid,DATE ORDER BY DATE DESC
+	</select>
+
+	<select id="findlsByPage" resultType="com.dt.sjcs.mvc.pojo.Sjpz">
+		select * from sj_sjpz_copy where 1=1
+		<if test="param.sbbh!=null and param.sbbh!=''">
+			and FIND_IN_SET(sbid,#{param.sbbh})
+		</if>
+		<choose>
+			<when test="param.kssj != null and param.kssj != '' and param.jssj != null and param.jssj != ''">
+				and date between DATE_FORMAT(#{param.kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{param.jssj},'%Y-%m-%d'),' 23:59:59')
+			</when>
+			<otherwise>
+				and date >= DATE_SUB(NOW(),INTERVAL 8 DAY)
+			</otherwise>
+		</choose>
+		<if test="param.sbid!=null and param.sbid!=''">
+			and sbid like concat(concat('%', #{param.sbid}), '%')
+		</if>
+		GROUP BY sbid,DATE ORDER BY DATE DESC
+	</select>
+
+	<select id="findDc" resultType="com.dt.sjcs.mvc.pojo.Sjpz">
+		select * from sj_sjpz where 1=1
+		<if test="param.sbbh!=null and param.sbbh!=''">
+			and FIND_IN_SET(sbid,#{param.sbbh})
+		</if>
+		<choose>
+			<when test="param.kssj != null and param.kssj != '' and param.jssj != null and param.jssj != ''">
+				and date between DATE_FORMAT(#{param.kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{param.jssj},'%Y-%m-%d'),' 23:59:59')
+			</when>
+			<otherwise>
+				and date BETWEEN CONCAT(CURDATE(),' 00:00:00') AND CONCAT(CURDATE(),' 23:59:59')
+			</otherwise>
+		</choose>
+		<if test="param.sbid!=null and param.sbid!=''">
+			and sbid like concat(concat('%', #{param.sbid}), '%')
+		</if>
+		GROUP BY sbid,DATE ORDER BY DATE DESC
+	</select>
+
+	<select id="findlsDc" resultType="com.dt.sjcs.mvc.pojo.Sjpz">
+		select * from sj_sjpz_copy where 1=1
+		<if test="param.sbbh!=null and param.sbbh!=''">
+			and FIND_IN_SET(sbid,#{param.sbbh})
+		</if>
+		<choose>
+			<when test="param.kssj != null and param.kssj != '' and param.jssj != null and param.jssj != ''">
+				and date between DATE_FORMAT(#{param.kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{param.jssj},'%Y-%m-%d'),' 23:59:59')
+			</when>
+			<otherwise>
+				and date >= DATE_SUB(NOW(),INTERVAL 8 DAY)
+			</otherwise>
+		</choose>
+		<if test="param.sbid!=null and param.sbid!=''">
+			and sbid like concat(concat('%', #{param.sbid}), '%')
+		</if>
+		GROUP BY sbid,DATE ORDER BY DATE DESC
+	</select>
+
+	<select id="findList" resultType="com.dt.sjcs.mvc.pojo.Sjpz">
+		select * from sj_sjpz where bj = '0' and FIND_IN_SET(sbid,#{sbid})
+	</select>
+	<update id="update" parameterType="com.dt.sjcs.mvc.pojo.Sjpz">
+		update sj_sjpz set bj = '1', tsdw = #{tsdw}, tsjg = #{tsjg} where id = #{id}
+	</update>
+
+	<select id="findYxList" resultType="com.dt.sjcs.mvc.pojo.Sjpz">
+		select * from sj_sjpz where date(date) = date_sub(curdate(),interval 1 day) and FIND_IN_SET(sbid,#{sbid})
+	</select>
+	<update id="updateYx" parameterType="com.dt.sjcs.mvc.pojo.Sjpz">
+		update sj_sjpz set yxbj = '1', tsyx = #{tsyx} where id = #{id}
+	</update>
+
+	<insert id="insertcopy">
+		INSERT INTO sj_sjpz_copy SELECT * FROM sj_sjpz WHERE TO_DAYS(NOW()) > TO_DAYS(xtsj)
+	</insert>
+	<delete id="deletesjpz">
+		DELETE FROM sj_sjpz WHERE TO_DAYS(NOW()) > TO_DAYS(xtsj)
+	</delete>
+
+	<select id="findJyList" resultType="com.dt.sjcs.mvc.pojo.Sjpz">
+		select * from sj_sjpz where sbid = #{sbid} and #{date} > date order by date desc limit 1
+	</select>
+
+</mapper>

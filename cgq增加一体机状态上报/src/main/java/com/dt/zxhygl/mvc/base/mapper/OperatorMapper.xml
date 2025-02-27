@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dt.zxhygl.mvc.base.dao.IOperatorDao">
+
+    <!--根据主键查询一条用户数据-->
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultType="Operator">
+        select
+        *
+        from t_operator a
+
+        where a.zid=#{id}
+    </select>
+    
+    <!--用户登录-->
+    <select id="loginByUserNameAndPassword" parameterType="User" resultType="User">
+        select
+        
+        a.zid as zid,
+        a.zcode as username,
+        a.zpassword as password,
+        a.zname as xm,
+        a.zrole as role
+        
+        from t_operator a
+        where zcode=#{username} and zpassword=#{password}
+    </select>
+    
+    <!--查询所有用户数据 -->
+    <select id="findByPage" resultType="Operator">
+        select
+        *
+        from t_operator a
+		<where> 
+			<if test="param!=null">
+				<if test="param.qyid!=null and param.qyid!=''">
+			 		 and zqyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+	                (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.qyid}) t2) t3 WHERE (ischild != 0 OR id = #{param.qyid}))
+				</if>
+		 		<if test="param.zcode!=null and param.zcode!=''">
+			 		<bind name="usernameLike" value="'%' + param.zcode + '%'" />
+					and a.zcode like #{usernameLike} 
+				</if>
+		 		<if test="param.zrole!=null and param.zrole!=''">
+					and a.zrole = #{param.zrole} 
+				</if>
+			</if>
+		</where>
+    </select>
+    
+    <!-- 根据单位编号取得账号信息 -->
+    <select id="selectByGzry"  resultType="Operator">
+    	select * from t_operator where zrole='4' 
+    </select>
+    
+    <select id="selectByUsername" parameterType="string"  resultType="Operator">
+        select 
+        *
+        from t_operator a
+		<where>
+			a.zcode = #{zcode}
+		</where>
+    </select>
+    
+    <select id="selectByUsernameWithOutZid"  resultType="Operator">
+        select 
+        *
+        from t_operator a
+		<where>
+			a.zcode = #{zcode}
+			and a.zid <![CDATA[ <> ]]> #{zid}
+		</where>
+    </select>
+    
+    <!-- 插入菜单 -->
+    <insert id="insert" parameterType="Operator">
+    	insert into t_operator (
+			zid, 
+			zcode, 
+			zname, 
+			zpassword,
+			zqyid,
+			zqymc,
+			zrole,
+			zxszd
+    	)values(
+			#{zid,jdbcType=VARCHAR}, 
+			#{zcode,jdbcType=VARCHAR}, 
+			#{zname,jdbcType=VARCHAR}, 
+			#{zpassword,jdbcType=VARCHAR},
+			#{zqyid,jdbcType=VARCHAR},
+			#{zqymc,jdbcType=VARCHAR},
+			#{zrole,jdbcType=VARCHAR},
+			#{zxszd,jdbcType=VARCHAR}
+    	)
+    </insert>
+    
+    <update id="update" parameterType="Operator">
+    	update t_operator 
+    	<trim prefix="set" suffixOverrides=",">
+			<if test="zcode!=null">zcode=#{zcode,jdbcType=VARCHAR}, </if>
+			<if test="zname!=null">zname=#{zname,jdbcType=VARCHAR}, </if>
+			<if test="zpassword!=null">zpassword=#{zpassword,jdbcType=VARCHAR},</if> 
+			<if test="zrole!=null">zrole=#{zrole,jdbcType=VARCHAR}, </if>
+			<if test="zqyid!=null">zqyid=#{zqyid,jdbcType=VARCHAR}, </if>
+			<if test="zqymc!=null">zqymc=#{zqymc,jdbcType=VARCHAR}, </if>
+			<if test="zxszd!=null">zxszd=#{zxszd,jdbcType=VARCHAR}, </if>
+		 </trim>	
+		where 
+			zid=#{zid,jdbcType=VARCHAR}
+    </update>
+    
+    <delete id="delete" parameterType="string">
+    	delete from t_operator where zid=#{id,jdbcType=VARCHAR}
+    </delete>
+    
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dt.zxhygl.mvc.base.dao.IDemoBarChartDao">
+
+    <!--按月份统计会议次数-->
+    <select id="getHyCountByMonth" parameterType="java.lang.String" resultType="int">
+        select
+        count(1)
+        from hy_hyinfo a
+
+        where a.zyear=#{year} and to_number(to_char(zkssj,'MM'))=to_number(#{month}) 
+    </select>
+    
+
+</mapper>

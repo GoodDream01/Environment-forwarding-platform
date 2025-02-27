@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局的映射器启用或禁用缓存。 -->
+        <setting name="cacheEnabled" value="true" />
+        <!-- 全局启用或禁用延迟加载 -->
+        <setting name="lazyLoadingEnabled" value="true" />
+        <!-- 允许或不允许多种结果集从一个单独的语句中返回 -->
+        <setting name="multipleResultSetsEnabled" value="true" />
+        <!-- 使用列标签代替列名 -->
+        <setting name="useColumnLabel" value="true" />
+        <!-- 允许JDBC支持生成的键 -->
+        <setting name="useGeneratedKeys" value="false" />
+        <!-- 配置默认的执行器 -->
+        <setting name="defaultExecutorType" value="SIMPLE" />
+        <!-- 设置超时时间 -->
+        <setting name="defaultStatementTimeout" value="25000" />
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+    <!-- 扫描包@Alias("User")定义pojo类的别名 -->
+    <typeAliases>
+    	<!-- 会议管理 -->
+   		<package name="com.dt.zxhygl.mvc.base.pojo" />
+        <package name="com.dt.cgq.mvc.pojo" />
+        <package name="com.dt.pmkz.mvc.pojo" />
+        <package name="com.dt.sjcs.mvc.pojo" />
+   		<package name="com.dt.common.interceptor.pagination.model" />
+    </typeAliases>
+     <plugins>
+    	<plugin interceptor="com.dt.common.interceptor.pagination.PaginationInterceptor">
+    		<property name="dialect" value="com.dt.common.interceptor.pagination.dialect.database.MySQLDialect"/>
+    	</plugin>
+    </plugins>
+</configuration>

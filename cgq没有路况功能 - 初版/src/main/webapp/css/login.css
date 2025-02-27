@@ -1,0 +1,111 @@
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+}
+body{	
+    background:url(../images/login/background.jpg) center top no-repeat;
+    _background-color:#5c90ea;
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	overflow-y: hidden;
+}
+img{
+	display:block;
+	width:580px;
+	height:70px;
+	margin:0 auto;
+	padding-top:100px;
+	padding-bottom:50px;
+}
+.div-100 .login-body{
+    width:100%;	
+	height:300px;
+    background:url(../images/login/login.png) center center no-repeat;
+	background-size:440px 300px;
+	vertical-align:middle;
+	text-align:center;
+}
+.div-100 .login-body .login-box{
+	width:254px;
+	height:260px;
+	display:inline-block;
+	margin-top:30px;
+	margin-bottom:10px;
+}
+.div-100 .login-body .login-box form{
+	width:254px;
+	height:220px;
+}
+.div-100 .login-body .login-box form ul{
+	width:254px;
+	height:220px;
+	margin:0 auto;
+}
+.div-100 .login-body .login-box form ul li{
+    list-style-type:none; 
+	font-family:"Times New Roman";
+	font-size:20px;
+	color:#1a1e21;
+	font-weight:bold;
+} 
+.div-100 .login-body .login-box form ul .loginuser,.login-box form ul .loginpwd,.login-box form ul .yzm{	
+    width:254px;
+	height:35px;
+	text-align:left;
+	margin-top:12px;
+	margin-bottom:10px;
+	vertical-align:middle;
+}
+.div-100 .login-body .login-box form ul li input{
+    display:inline;
+	border:none;
+	border-radius:5px;
+	width:165px;
+	height:27px;
+	background-color:#fff;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	margin-left:8px;
+	padding-left:5px;
+	line-height:27px\9;
+	line-height:27px;
+	overflow:hidden;
+}
+.div-100 .login-body .login-box form ul .loginbtn,.login-box form ul .resetbtn{   
+	width:110px;
+	height:45px;
+	float:left;
+	display:inline;
+	margin-top:30px;
+}
+.div-100 .login-body .login-box form ul button{
+	width:110px;
+	height:42px;
+	outline:none;
+	border:none;
+	cursor: pointer;
+}
+.div-100 .login-body .login-box form ul .loginbtn button{
+	background:url(../images/login/button1.png) no-repeat;
+}
+.div-100 .login-body .login-box form ul .loginbtn button:hover{
+	background:url(../images/login/button1-1.png) no-repeat;
+}
+.div-100 .login-body .login-box form ul .resetbtn button{
+    margin-left:34px;
+	background:url(../images/login/button2.png) no-repeat;
+}
+.div-100 .login-body .login-box form ul .resetbtn button:hover{
+	background:url(../images/login/button2-1.png) no-repeat;
+}
+.div-100 .login-box form ul .yzm{
+	margin-top:10px;
+	margin-bottom: 10px; 
+}
+.yzm img{
+	display: inline;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}

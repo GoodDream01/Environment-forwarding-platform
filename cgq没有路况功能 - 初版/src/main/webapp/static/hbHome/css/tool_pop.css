@@ -1,0 +1,264 @@
+body{
+	margin: 0 auto ;
+	text-align: center ;
+	font-family: Arial, "Microsoft YaHei", Helvetica, sans-serif ;
+	font-size: 12px ;
+	background-color: #fff ;}
+img,ul,li{
+	margin: 0 ;
+	padding: 0 ;
+	border: 0 ;
+	list-style: none ;}
+div{
+	text-align: left ;}
+a:link,
+a:visited{
+	color: #335169 ;
+	text-decoration: none ;}
+a:hover,
+a:active{
+	color: #6699cc ;
+	text-decoration: underline ;}
+.floatL{
+	float: left ;}
+.floatR{
+	float: right ;}
+.clean{
+	clear: both ;}
+.h82{
+	height: 82px ;}
+.h52{
+	height: 52px ;}
+.tabs-hidden{ 
+	display: none ; }
+.w66{
+	width: 66px ;}
+.marT74{
+	margin-top: 90px ;}
+.marT120{
+	margin-top: 136px ;}
+.marT205{
+	margin-top: 216px ;}
+.marT270{
+	margin-top: 284px ;}
+.marL8{
+	margin-left: 8px ;}
+.marR8{
+	margin-right: 8px ;}
+.panL15{
+	padding-left: 15px ;}
+.panR16{
+	padding-right: 16px ;}
+.panT16{
+	padding-top: 16px ;}
+.panB16{
+	padding-bottom: 16px ;}
+.color-red{
+	color: #f80012 ;}
+/****************tool*****************/
+.tool-bar{
+	position: absolute ;
+	left:5px;
+	bottom:50px;
+	z-index: 999 ;}
+.tool-barBg1{
+	background: url(../../images/arcgis/tools/pop0.gif) repeat-y 0 0 ;
+	border: 2px solid #1d66ac ;
+	border-radius: 10px ;
+	box-shadow: 1px 1px 4px #dee3e8 ;}
+.tool-barBg0{
+	background-color: #f9fcfe ;
+	border: 2px solid #1d66ac ;
+	border-radius: 10px ;
+	box-shadow: 1px 1px 4px #dee3e8 ;}
+.tool-center{
+	position: relative ;
+	padding-left: 15px ;}
+.arrowL{
+	position: absolute ;
+	z-index: 99 ;
+	left: 0 ;
+	top: 50% ;
+	margin-top:-10px ;
+	*margin-top:-11px ;
+	width: 18px ;
+	height: 20px ;
+	background: url(../../images/arcgis/tools/popL.png) no-repeat 0 center ;}
+.arrowR{
+	position: absolute ;
+	z-index: 99 ;
+	right: 0 ;
+	top: 50% ;
+	margin-top:-10px ;
+	*margin-top:-11px ;
+	width: 18px ;
+	height: 20px ;
+	background: url(../../images/arcgis/tools/popR.png) no-repeat 0 center ;}
+.arrowT{
+	position: absolute ;
+	z-index: 99 ;
+	left: 50% ;
+	top: 0 ;
+	margin-left:-10px ;
+	*margin-left:-11px ;
+	width: 20px ;
+	height: 20px ;
+	background: url(../../images/arcgis/tools/popT.png) no-repeat 0 center ;}
+.arrowB{
+	position: absolute ;
+	z-index: 99 ;
+	left: 50% ;
+	bottom: 0 ;
+	margin-left:-10px ;
+	*margin-left:-11px ;
+	width: 20px ;
+	height: 18px ;
+	background: url(../../images/arcgis/tools/popB.png) no-repeat 0 center ;}
+.tool-classification{
+	width:56px
+}
+.tool-classification li{
+	width: 56px ;
+	cursor: pointer ;}
+.tool-classification li.selected{
+	background-color: #7288a2 ;
+	width: 56px ;
+	cursor: pointer }
+.tool-classification li.selected-first{
+	background-image: url(../../images/arcgis/tools/bg0.png) ;}
+.tool-classification li.selected-last{
+	background-image: url(../../images/arcgis/tools/bg1.png) ;}
+.tool-classification li a{
+	display: inline-block ;
+	width: 56px ;
+	line-height: 31px ;
+	padding-top: 34px ;
+	background-position: center 10px ;
+	background-repeat: no-repeat ;
+	text-align: center ;
+	color: #3b618e ;
+	text-decoration: none ;}
+.tool-classification li.selected-first a,
+.tool-classification li.selected a,
+.tool-classification li.selected-last a{
+	color: #f5fafe ;}
+.tool-classification li a.equipment{
+	background-image: url(../../images/arcgis/tools/equipment.gif) ;}
+.facilities{
+	background-image: url(../../images/arcgis/tools/facilities.gif) ;}
+.police-forces{
+	background-image: url(../../images/arcgis/tools/police-forces.gif) ;}
+.event{
+	background-image: url(../../images/arcgis/tools/event.gif) ;}
+.traffic{
+	background-image: url(../../images/arcgis/tools/traffic.gif) ;}
+.tool-classification li a.weather{
+	background-image: url(../../images/arcgis/tools/weather.gif) ;}
+.tool-classification li.selected .equipment{
+	background-image: url(../../images/arcgis/tools/equipment1.gif) ;}
+.tool-classification li.selected .facilities{
+	background-image: url(../../images/arcgis/tools/facilities1.gif) ;}
+.tool-classification li.selected .police-forces{
+	background-image: url(../../images/arcgis/tools/police-forces1.gif) ;}
+.tool-classification li.selected .event{
+	background-image: url(../../images/arcgis/tools/event1.gif) ;}
+.tool-classification li.selected .traffic{
+	background-image: url(../../images/arcgis/tools/traffic1.gif) ;}
+.tool-classification li.selected .weather{
+	background-image: url(../../images/arcgis/tools/weather1.gif) ;}
+
+.tool-center2{
+	margin-left: 2px ;
+	width: 267px ;
+	text-align: center ;
+	background: url(../../images/arcgis/tools/pop5.png) no-repeat 0 0 ;}
+
+
+/********pop*********/
+.pop{
+	position: absolute ;
+	z-index: 99 ;}
+.pop-center{
+	margin: 0 8px 8px ;
+}
+.pop-head{
+	border-top-left-radius: 8px ;
+	border-top-right-radius: 8px ;
+	line-height: 32px ;
+	height: 32px ;
+	font-size: 14px ;
+	font-weight: 600 ;
+	background: #6e849e ;
+	color: #fff ;
+	width: 100% ;}
+.title{
+	line-height: 26px ;
+	font-size: 14px ;
+	font-weight: 600 ;
+	margin-top: 8px ;}
+.tool-center-links ul{
+	margin: 0 0 0 20px;}
+.tool-center-links ul li{
+	float: left ;
+	line-height: 22px ;}
+.tool-center-links ul li a{
+	display: inline-block ;
+	padding-left: 8px ;
+	width: 80px ;
+	margin-right: 10px ;
+	background: url(../../images/arcgis/tools/icon_list.gif) no-repeat 0 center ;}
+.to-min{
+	display: inline-block ;
+	width: 14px ;
+	height: 32px ;
+	background: url(../../images/arcgis/tools/icon_min.gif) no-repeat 0 center ;}
+.do-close{
+	display: inline-block ;
+	width: 14px ;
+	height: 32px ;
+	background: url(../../images/arcgis/tools/icon_close.gif) no-repeat 0 center ;}
+/***********table1*************/
+table.altrowstable {
+	border-width: 1px ;
+	border-collapse: collapse ;
+	margin: 4px 8px;
+}
+table.altrowstable th {
+}
+table.altrowstable td {
+	border-right: 1px solid #a8c7ce ;
+	line-height: 26px ;
+	font-size: 12px ;
+	width: 64px ;
+	padding-left: 10px ;
+}
+table.altrowstable .borderB td{
+	border-bottom: 1px solid #a8c7ce ;}
+table.altrowstable td.noneR{
+	border-right: none ;}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+/***********table2*************/
+table.altrowstable2 {
+	border-width: 1px ;
+	border-collapse: collapse ;
+}
+table.altrowstable2 th {
+}
+table.altrowstable2 td {
+	border: 1px solid #a8c7ce ;
+	line-height: 24px ;
+	font-size: 12px ;
+	padding-left: 10px ;
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+

@@ -1,0 +1,78 @@
+@charset:"utf-8";
+/* style CSS  */
+* { padding: 0; margin: 0; }
+html,body{
+    min-width: 320px; 
+    max-width: 640px;
+	-webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%; 
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	font-family: "microsoft yahei"; 
+    background: #EAEBEF;
+}
+ol,ul,li {list-style:none;}
+em {font-style: normal;}
+a{text-decoration:none; }
+#container{
+	width:100%;
+	margin:0 auto;
+	font-size:100%;
+}
+.header{
+	width:100%;
+}
+.header .banner img{
+	width:100%;
+	height:auto;
+}
+.content{
+    width:100%;
+	margin-top:20px;
+}
+
+/*choice css */
+.content .choice{
+	width:88%;
+	height:160px;
+	margin:0 auto;
+	font-size:100%;
+	margin-top:40px;
+    background-color:#ffffff;
+	border-radius:10px;
+}
+
+.choice .icon{
+	width:160px;
+	height:160px;
+	float:left;
+	text-align:center;
+}
+.choice .icon img{
+	display:inline-block;
+	width:80%;
+	height:80%;
+	margin:0 auto;
+	padding:10% 0;
+} 
+.choice .xz{
+    width:55%;
+	float:left;
+	padding-left:3%;
+}
+.choice .xz p{
+    display:block;
+	width:100%;
+	height:120px;
+	padding-top:40px;
+	overflow:hidden;
+}
+.choice .xz p a{
+	font-size:2.5em;
+	line-height:70px;
+	color:#2299f4;
+	letter-spacing:5px;
+	
+}
+

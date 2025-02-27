@@ -1,0 +1,1864 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*初始化*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    font-family:"Microsoft YaHei";
+    line-height:1em;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html{height:100%; overflow:hidden;}
+body {
+    line-height: 1;
+    font-family:"Microsoft YaHei";
+    overflow:hidden;
+	height:100%;
+}
+ol, ul,li {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+	table-layout:fixed;
+	width:100%;
+	color:#333333;
+	font-size:12px;
+}
+a { text-decoration: none;font-family:"Microsoft YaHei";border: 0;outline: none;-webkit-tap-highlight-color:transparent;}
+input{ outline: none; border: none;background:none;font-family:"Microsoft YaHei";padding:0;}
+.floatL{ float: left; }
+.floatR{ float: right; }
+.clear{clear:both;}
+.show{display: block;}
+.hide{display: none;}
+.hidden{overflow:hidden;}
+.relative{position:relative;}
+.absolute{position:absolute;}
+.relDiv{height:100%;position:relative;}
+.echart{height:100%;}
+.hidden{overflow:hidden;}
+
+/*头部*/
+.header{
+	height:63px;
+}
+
+.header .systemName{
+	width:350px;
+	height:100%;
+}
+
+.header .user{
+	width:163px;
+	height:100%;
+}
+.header .userName{
+	font-size:14px;
+	display:block;
+	height:44px;
+	text-indent:54px;
+	line-height:44px;
+}
+.header .systemTime{
+	font-size:12px;
+	display:block;
+	height:12px;
+	text-align:center;
+	line-height:12px;
+}
+.header .userOperate{
+	width:7px;
+	height:100%;
+	display:inline-block;
+	right:6px;
+	top:0;
+	cursor:pointer;
+}
+
+
+
+.header .popGrid2{
+    padding-top: 11px;
+    width: 126px;
+    right: -4px;
+    top: 36px;
+    z-index: 99;
+}
+.header .popCent{
+    width: 100%;
+}
+.header .popGrid2 ul{
+	margin: 0 8px;
+}
+.header .popGrid2 .popB {
+    height: 10px;
+    width: 100%;
+}
+.header .popGrid2 li {
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	line-height: 30px;
+	height:30px;
+	border-bottom: 1px solid #fafafc;
+}
+.header .popGrid2 span{
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 2px;
+}
+.header .skinChangeName{
+	line-height:30px;
+}
+.header .popGrid2 .skinChange{
+	width:7px;
+	height:7px;
+	cursor:pointer;
+}
+.header .popGrid2 a{
+	display:block;
+	height:100%;
+	line-height:30px;
+}
+
+/*头部菜单*/
+.header .headerMenu{
+	height:100%;
+	margin-right:15px;
+}
+.header .menuRel{
+	width:100%;
+	height:100%;
+}
+
+/*子菜单样式*/
+.header .childMenu{
+	/* float: left; */
+	position:absolute;
+	width: 78px;
+	text-align: center;
+	height: 60px;
+	cursor:pointer;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+.header .childMenu .icon{
+	display:block;
+	width:100%;
+	height:40px;
+}
+.header .childMenu .name{
+	color:#b7bcc5;
+	font-size:12px;
+}
+
+/*放置头部菜单的切换按钮样式*/
+.headerMenuToggle{
+	width:10px;
+	height:100%;
+}
+.headerMenuToggle .toggleBtn{
+	right:0;
+	width:100%;
+	cursor:pointer;
+	height:25px;
+	z-index:10;
+}
+.headerMenuToggle .upBtn{
+	top:12px;
+}
+.headerMenuToggle .downBtn{
+	top:36px;
+}
+
+
+/*菜单与iframe开始*/
+.floatModule_iframeModule{
+	top:61px;
+	bottom:27px;
+	width:100%;
+	z-index:10;
+}
+.menu_iframe .relDiv{
+	width:100%;
+	height:100%;
+}
+
+
+/*中间浮动模块开始*/
+.floatModule_iframeModule  .floatCenterPart{
+	left:314px;
+	right:314px;
+	height:200px;
+	background:#0f0;
+}
+
+/*中间浮动模块结束*/
+
+
+
+/*左中右浮动部分结束*/
+
+/*iframe开始*/
+.iframeModule{
+	height:100%;
+	width:100%;
+}
+.iframeModule .mapFrame{
+	height:100%;
+	width:100%;
+}
+
+/*iframe结束*/
+
+
+/*右侧iframe结束*/
+
+/*菜单与iframe结束*/
+
+/*页脚开始*/
+.footerModule{
+	height:27px;
+	bottom:0;
+	width:100%;
+	left:0;
+}
+.copyrightVersion{
+	height:100%;
+}
+.copyrightVersion .copyRight{
+	margin-right:35px;
+	display:inline-block;
+	line-height:27px;
+	color:#fff;
+	font-size:12px;
+}
+.copyrightVersion .version{
+	margin-right:12px;
+	display:inline-block;
+	line-height:27px;
+	color:#fff;
+	font-size:12px;
+}
+/*页脚结束*/
+
+
+
+/*地图上面浮动部分开始*/
+.mapFloatPart {
+	float: left; /* 自适应内容宽度 */
+	position: relative;
+	left: 50%;
+	height:0;
+	width:100%;
+	top:-2px;
+	z-index:30;
+}
+.mapFloatRelDiv {
+	position: relative;
+	left: -50%;
+	width:100%;
+	height:0;
+}
+.mapFloatPart  .floatPart{
+	width:314px;
+	padding:0 1px;
+	box-sizing:border-box;
+}
+/*地图浮动左侧部分开始*/
+.mapFloatPart .floatLeftPart{
+	background:url(../images/skin1/mapFloatPartLeft.png) no-repeat left top;
+	background-size:100% 100%;
+}
+
+/*module公共样式开始*/
+.mapFloatPart .module{
+	height:33%;
+	width:100%;
+	overflow:hidden;
+	margin:2px 0;
+	box-sizing: border-box;
+}
+.mapFloatPart .module .titleBox{
+	height:23px;
+}
+.mapFloatPart .module .titleBox .tab{
+	position:absolute;
+	display:block;
+	color:#00fcff;
+	font-size:12px;
+	text-indent:20px;
+	height:100%;
+	line-height:22px;
+	background:url(../images/skin1/moduleTabBg.png) no-repeat center center; 
+	background-size:100% 100%;
+	width:93px;
+	top:0; 
+	cursor:pointer;
+}
+.mapFloatPart .module .titleBox .tab.selected{
+	background:url(../images/skin1/moduleTabBgSelected.png) no-repeat center center; 
+	background-size:100% 100%;
+	color:#fff;
+	font-size:14px;
+}
+.mapFloatPart .module .titleBox .tab1{
+	background:url(../images/skin1/moduleTabBgFirst.png) no-repeat left center;
+	left:0;
+	width:99px;
+	text-indent:16px;
+}
+.mapFloatPart .module .titleBox .tab1.selected{
+	background:url(../images/skin1/moduleTabBgFirstSelected.png) no-repeat left center;
+	color:#fff;
+	font-size:14px;
+}
+.mapFloatPart .module .titleBox .tab2{
+	left:87px;
+}
+.mapFloatPart .module .titleBox .tab3{
+	left:169px;
+}
+/**0131**/
+.mapFloatPart .module .tabContent .zIndexTop{
+	opacity:1;
+	z-index:10;
+}
+.mapFloatPart .module .tabContent{
+	top:22px;
+	left:0;
+	width:100%;
+	bottom:0;
+}
+/**0131**/
+.mapFloatPart .module .box{
+	height:100%;
+	width:100%;
+	position:absolute;
+	top: 0;
+	left: 0;
+	opacity:0;
+	z-index:1;
+}
+/*.mapFloatPart .module .tabContent .box{*/
+	/*height:100%;*/
+	/*position:relative;*/
+/*}*/
+.mapFloatPart .module .tabContent.tabContent1{
+	background:url(../images/skin1/moduleBg1.png) no-repeat center center;
+	background-size:100% 100%;
+}
+.mapFloatPart .module .tabContent.tabContent2{
+	background:url(../images/skin1/moduleBg2.png) no-repeat center center;
+	background-size:100% 100%;
+}
+.mapFloatPart .module .tabContent.tabContent3{
+	background:url(../images/skin1/moduleBg3.png) no-repeat center center;
+	background-size:100% 100%;
+}
+
+/*module公共样式结束*/
+
+/*地图浮动左侧部分结束*/
+
+/*地图浮动中间部分开始*/
+.mapFloatPart .floatCenterPart{
+	left:314px;
+	right:314px;
+	height:30px;
+	top:0;
+	font-size:12px;
+	color:#ff6f80;
+}
+.mapFloatPart .floatCenterPart .msgBox{
+	height:100%;
+}
+.mapFloatPart .floatCenterPart .relDiv{
+	display:inline-block;
+	height:100%;
+	width:25px;
+	margin-left:8px;
+	margin-right:5px;
+	background:url(../images/skin1/mapFloatPartMsg.png) no-repeat left center;
+	vertical-align: middle;
+}
+.mapFloatPart .floatCenterPart .msgBox a{
+	color:#1bb6f6;
+	text-decoration:underline;
+}
+.mapFloatPart .floatCenterPart .msgBox .msgNumber{
+	background:url(../images/skin1/mapFloatNumberBg.png) no-repeat center center;
+	width:14px;
+	height:14px;
+	line-height:14px;
+	text-align:center;
+	display:block;
+	top:-1px;
+	left:10px;
+	color:#fff;
+}
+/*地图浮动中间部分结束*/
+
+/*地图浮动右边部分开始*/
+.mapFloatPart .floatRightPart{
+	background:url(../images/skin1/mapFloatPartRight.png) no-repeat left top;
+	background-size:100% 100%;
+}
+/*地图浮动右边部分结束*/
+
+/*地图上面浮动部分结束*/
+
+/*今日任务开始*/
+.jrrwListPart{
+	color:#00ffea;
+	font-size:12px;
+	padding:8px 6px;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+.jrrwListPart .lists{
+	height:100%;
+}
+/*.jrrwListPart li{*/
+	/*padding-top:7px;*/
+	/*position:relative;*/
+	/*padding-left:25px;*/
+	/*background:url(../images/skin1/tag2.png) no-repeat 4px 7px;*/
+	/*border-bottom:1px dashed #48829e;*/
+/*}*/
+.jrrwListPart li.jwrw-msg-box {
+	background:url(../images/skin1/jwrj_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.skin2 .jrrwListPart li.jwrw-msg-box {
+	background:url(../images/skin2/jwrw_bg02.png) no-repeat;
+	background-size: 100% 100%;
+}
+.jrrwListPart li div p{
+	padding-top:7px;
+	padding-bottom: 7px;
+	position:relative;
+	padding-left:25px;
+	background:url(../images/skin1/tag2.png) no-repeat 4px 8px;
+	border-bottom:1px dashed #48829e;
+	line-height:20px;
+	color:#00ffea;
+	font-size:12px;
+}
+.jrrwListPart li div p.jwrw-msg {
+	background:url(../images/skin1/icon_jwrw.png) no-repeat  4px 8px;
+}
+.jrrwListPart li.important{
+	background:url(../images/skin1/tag1.png) no-repeat 1px 8px;
+}
+.jrrwListPart li .team {
+	color:#ff3d3d;
+}
+.jrrwListPart li.received .team{
+	color:#00ffea;
+}
+.jrrwListPart .receive{
+	bottom:7px;
+	right:8px;
+	width:40px;
+	background:#00f0ff;
+	border-radius:3px;
+	height:18px;
+	line-height:18px;
+	text-align:center;
+	color:#023a55;
+	font-size:12px;
+	cursor:pointer;
+}
+.jrrwListPart li.received .receive{
+	color:#023a55;
+	background:#0097a5;
+}
+/*今日任务结束*/
+
+/*指令平台开始*/
+
+.zlptPart .zlptTabContent{
+	top:32px;
+	bottom:6px;
+	width:106%;
+	background:url(../images/skin1/zlptPartBg.png) no-repeat 6px top;
+	background-size:auto 100%;
+	overflow-y:scroll;
+	padding:5px 0;
+}
+.zlptPart .sContent{
+	margin:0 3px;
+}
+.zlptPart .sContent .item{
+	margin-top:3px;
+}
+.zlptPart .time{
+	color:#fbd449;
+	font-size:12px;
+	background:url(../images/skin1/zlptPartCircle.png) no-repeat left center;
+	text-indent:15px;
+}
+.zlptPart .paragraph{
+	padding-left: 15px;
+}
+.zlptPart .zlptTabContent .message{
+	color:#00ffea;
+	font-size:12px;
+	display:inline;
+	line-height:18px;
+}
+.zlptPart .zlptTabContent .new-msg .message {
+	color: #ff5454;
+}
+.zlptPart .zlptTabContent .new-msg .detailHref {
+	color: #ff5454;
+}
+.zlptPart #sendbox .team {
+	color:#ff3d3d;
+}
+.zlptPart #sendbox .team.read {
+	color:#00ffea;
+}
+.zlptPart .zlptTabContent .detailHref{
+	color:#00ffea;
+	font-size:12px;
+	display:inline;
+	line-height:18px;
+}
+.zlptPart .zlptTabContent .item.received .team{
+	color:#ff3d3d;
+}
+
+/*指令平台结束*/
+
+
+/*警卫任务开始*/
+.jwrwPart{
+	padding:3px 4px;
+	box-sizing:border-box;
+}
+
+.jwrwPart .message{
+	padding-left:8px;
+	line-height:18px;
+	color:#00ffea;
+	font-size:12px;
+}
+
+.jwrwPart .echartBox{
+	top:45px;
+	bottom:0;
+	width:100%;
+}
+
+/*警卫任务结束*/
+
+/*数值分开显示公共样式开始*/
+
+.beforeDataCreateSpan{
+	/*background:url(../images/skin1/thisMonth.png) no-repeat 7px center;*/
+	padding:9px 0 9px 16px;
+	height:24px;
+}
+
+.constructionSituationPart  .icon-month-or-year {
+    background-size: 100% 100%;
+    height: 35px;
+    width: 23px;
+    display: block;
+    position: absolute;
+    left: 6px;
+    top: 7px;
+    cursor: pointer;
+}
+.constructionSituationPart  .icon-month-or-year.icon-month {
+    background:url(../images/skin1/thisMonth.png) no-repeat center;
+}
+.constructionSituationPart  .icon-month-or-year.icon-year {
+    background:url(../images/skin1/thisYear.png) no-repeat center;
+}
+.beforeDataCreateSpan .dataTable{
+	height:48px;
+}
+.beforeDataCreateSpan th{
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	color:#00f0ff;
+	font-size:12px;
+	font-weight:bold;
+}
+.beforeDataCreateSpan  td{
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	color:#00f0ff;
+	font-size:12px;
+}
+.beforeDataCreateSpan .width1{
+	width:40px;
+}
+.beforeDataCreateSpan .tabBox_btnBox{
+	padding:4px 0;
+	border-bottom:none;
+}
+.beforeDataCreateSpan label{
+	display:inline-block;
+	line-height:24px;
+	height:100%;
+	color:#00f0ff;
+	font-size:12px;
+	font-weight:bold;
+	margin-left:30px;
+}
+.beforeDataCreateSpan span{
+	display:inline-block;
+	width:15px;
+	height:100%;
+	text-align:center;
+	font-size:24px;
+	font-weight:bold;
+	background:url(../images/skin1/jwrwDataBg.png);
+	border-radius:3px;
+	vertical-align:bottom;
+	margin-left:3px;
+}
+
+.beforeDataCreateSpan .white{
+	color:#fff;
+}
+.beforeDataCreateSpan .blue{
+	color:#00fff2;
+}
+.beforeDataCreateSpan .yellow{
+	color:#ffdd67;
+}
+.beforeDataCreateSpan .red{
+	color:#e95c61;
+}
+.beforeDataCreateSpan .green{
+	color:#5dff65;
+}
+
+/*数值分开显示公共样式结束*/
+
+/*子tab开始*/
+
+.tabBox_btnBox{
+	padding-top:6px;
+	padding-bottom:7px;
+	height:18px;
+	margin:0 5px;
+	border-bottom:1px dashed #48829e;
+}
+.constructionSituationPart .tabBox_btnBox {
+	border-bottom: none;
+}
+.tabBox_btnBox ul{
+	width:50%;
+	min-width:120px;
+	height:100%;
+}
+.tabBox_btnBox li{
+	/*float:left;*/
+	display: inline-block;
+	padding:0 7px;
+	background-color:#00949e;
+	color:#023a55;
+	line-height:18px;
+	height:18px;
+	width:40px;
+	box-sizing:border-box;
+	font-size:12px;
+	text-align:center;
+	cursor:pointer;
+}
+.tabBox_btnBox li.selected{
+	background-color:#00f0ff;
+}
+.tabBox_btnBox .leftRadius{
+	border-radius:3px 0 0 3px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+.tabBox_btnBox .rightRadius{
+	border-radius:0 3px 3px 0;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+.tabBox_btnBox .publish{
+	height:100%;
+	line-height:18px;
+	text-align:center;
+	background:#00f0ff;
+	font-size:12px;
+	color:#023a55;
+	padding:0 9px;
+	cursor:pointer;
+	border-radius:3px;
+	margin-right:2px;
+}
+
+/*子tab结束*/
+
+/*拥堵概况施工概况管制概况开始*/
+
+/*拥堵开始*/
+.congestionSituationPart{
+	padding:3px 4px;
+	box-sizing:border-box;
+}
+.congestionSituationPart .data{
+	background:none;
+	padding-left:0;
+}
+.congestionSituationPart .listsBox{
+	top:42px;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.congestionSituationPart .beforeDataCreateSpan label{
+	margin-left:10px;
+}
+.congestionSituationPart table{
+	width:100%;
+}
+.congestionSituationPart td{
+	height:24px;
+	color:#00ffe4;
+	font-size:12px;
+	line-height:24px;
+}
+.congestionSituationPart .width2{
+	width:60px;
+}
+.congestionSituationPart .width3{
+	width:62px;
+	text-align:center;
+}
+.congestionSituationPart .positionIcon{
+	background:url(../images/skin1/positionIcon.png) no-repeat 8px center;
+	/*text-indent:31px;*/
+}
+.congestionSituationPart .car{
+	background:url(../images/skin1/car.png) no-repeat 2px center;
+	text-indent:21px;
+}
+.congestionSituationPart .level{
+	color:#ffffff;
+	width:50px;
+	height:16px;
+	line-height:16px;
+	text-align:center;
+	display:inline-block;
+	border-radius:3px;
+}
+.congestionSituationPart .level1{
+	background:#14ba1c;
+}
+.congestionSituationPart .level2{
+	background:#ffc000;
+}
+.congestionSituationPart .level3{
+	background: coral;
+}
+.congestionSituationPart .level4{
+	background:#ff2525;
+}
+/*标准拥堵情况颜色值*/
+.state5{background:#fe0000;}
+.state4{background:#ff8400;}
+.state3{background:#ecec04;}
+.state2{background:#50cd26;}
+.state1{background:#008001;}
+.state-1{background:#c0c0c0;}
+.text-state5{color:#fe0000;}
+.text-state4{color:#ff8400;}
+.text-state3{color:#ecb104;}
+.text-state2{color:#50cd26;}
+.text-state1{color:#008001;}
+.text-state-1{color:#c0c0c0;}
+/*拥堵结束*/
+
+/*施工概况开始*/
+.constructionSituationTabContent{
+	top:76px;
+	bottom:0;
+	width:100%;
+}
+.constructionSituationPart .beforeDataCreateSpan{
+	height:auto;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+.constructionSituationTabContent .sContent{
+	height:100%;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+.constructionSituationTabContent .sContent.zIndexTop{
+	z-index: 100;
+	opacity: 1;
+}
+.constructionSituationTabContent .sContent .lists{
+	padding:0 5px;
+}
+.constructionSituationTabContent .item{
+	height:32px;
+	position:relative;
+	border-bottom:1px dashed #48829e;
+}
+.constructionSituationTabContent p{
+	position:absolute;
+	left:0;
+	right:55px;
+	top:0;
+	height:100%;
+	line-height:32px;
+	color:#00ffe4;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	font-size:12px;
+	overflow: hidden;
+	background:url(../images/skin1/constructionSituationPartIcon01.png) no-repeat 6px center;
+	text-indent:29px;
+}
+.constructionSituationTabContent .time{
+	float:right;
+	height:100%;
+	line-height:32px;
+	height:100%;
+	color:#00ffe4;
+	font-size:12px;
+}
+/*施工概况结束*/
+
+/*管制概况开始*/
+.generalSituationofControlPart .data{
+	background:none;
+	padding-left:0;
+}
+.generalSituationofControlTabContent{
+	top:42px;
+	bottom:0;
+	width:100%;
+}
+.generalSituationofControlTabContent .sContent{
+	height:100%;
+}
+.generalSituationofControlTabContent .lists{
+	padding:0 6px;
+}
+.generalSituationofControlTabContent .item{
+	border-bottom:1px dashed #48829e;
+}
+.generalSituationofControlTabContent p{
+	height:26px;
+	line-height:26px;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	font-size:12px;
+	overflow: hidden;
+	color:#00ffe4;
+}
+.generalSituationofControlTabContent label{
+	height:26px;
+	line-height:26px;
+	display:inline-block;
+	text-indent:29px;
+}
+.generalSituationofControlTabContent span{
+	height:26px;
+	line-height:26px;
+	display:inline-block;
+}
+.generalSituationofControlTabContent .message{
+	background:url(../images/skin1/generalSituationofControlIcon01.png) no-repeat 5px center;
+	text-indent:29px;
+}
+.generalSituationofControlTabContent .control{
+	background:url(../images/skin1/generalSituationofControlIcon02.png) no-repeat 3px center;
+}
+
+/*管制概况结束*/
+
+/*拥堵概况施工概况管制概况结束*/
+
+/*辖区警力辖区出勤开始*/
+
+/*辖区警力开始*/
+.areaPoliceForcePart .beforeDataCreateSpan{
+	background:none;
+	padding:9px 0;
+	height:auto;
+}
+.areaPoliceForcePart  .echartBox{
+	top:66px;
+	bottom:0;
+	width:100%;
+}
+.areaPoliceForcePart .totalData{
+	height:17px;
+	background:url(../images/skin1/areaPoliceForcePartIcon01.png) no-repeat 11px center;
+	text-indent:34px;
+	color:#ebcc5f;
+}
+.areaPoliceForcePart .actual{
+	color:#00f6e9;
+}
+.areaPoliceForcePart .expect{
+	color:#ebcc5f;
+}
+
+/*辖区警力结束*/
+
+/*辖区出勤开始*/
+.areaAttendancePart .beforeDataCreateSpan{
+	background:none;
+	padding:9px 0;
+}
+.areaAttendancePart  .echartBox{
+	top:66px;
+	bottom:0;
+	width:100%;
+}
+.areaAttendancePart .totalData{
+	height:17px;
+	background:url(../images/skin1/areaAttendancePartIcon01.png) no-repeat 7px center;
+	text-indent:18px;
+	color:#fff;
+	line-height:17px;
+	font-size:12px;
+}
+
+/*辖区出勤结束*/
+
+
+/*辖区警力辖区出勤结束*/
+
+
+/*实时警情辖区警情时段警情开始*/
+
+/*实时警情开始*/
+.realTimeAlarmPart .beforeDataCreateSpan{
+	background:none;
+}
+.realTimeAlarmPart .beforeDataCreateSpan label{
+	margin-left:0;
+
+}
+.realTimeAlarmPart .echartBox{
+	top:42px;
+	bottom:0;
+	width:100%;
+}
+.realTimeAlarmPart .totalData{
+	height: 17px;
+	background: url(../images/skin1/areaAttendancePartIcon01.png) no-repeat 7px center;
+	text-indent: 18px;
+	color: #fff;
+	line-height: 17px;
+	font-size: 12px;
+}
+.realTimeAlarmPart .tabBox{
+	width:230px;
+	right:7px;
+	top:0;
+	height:18px;
+	z-index:100;
+}
+.realTimeAlarmPart .tabBox .selectBox{
+	height:100%;
+	width:100px;
+	font-size:12px;
+	color:#00f0ff;
+}
+.realTimeAlarmPart .tabBox .selectBox span{
+	line-height:18px;
+	display:inline-block;
+}
+.realTimeAlarmPart .tabBox .select{
+	width:60px;
+	height:100%;
+	display:inline-block;
+}
+.realTimeAlarmPart .tabBox .select .relDiv{
+	padding-top:6px;
+}
+.realTimeAlarmPart .selectValue{
+	width:100%;
+	height:100%;
+	line-height:18px;
+	display:inline-block;
+	background:#00f0ff url(../images/skin1/realTimeAlarmPartSelectValue.png) no-repeat 48px center;
+	text-indent:8px;
+	color:#023a55;
+	border-radius:3px;
+	cursor:pointer;
+}
+.realTimeAlarmPart .selectWindow{
+	top:18px;
+	left:0;
+	/*width:82px;*/
+	display:none;
+}
+.realTimeAlarmPart .sjx{
+	display:block;
+	width:11px;
+	height:6px;
+	z-index:2;
+	top:0;
+	left:48px;
+	background:url(../images/skin1/realTimeAlarmPart01.png) no-repeat center top;
+}
+.realTimeAlarmPart .selectBox ul{
+	border:1px solid #00f6ff;
+	background:#009aa7;
+	border-radius:3px;
+	height: 116px;
+	width: 148px;
+	overflow-y: auto;
+}
+.realTimeAlarmPart .selectBox li{
+	height:28px;
+	line-height:28px;
+	border-bottom:1px solid #3eb0b9;
+	cursor:pointer;
+}
+.realTimeAlarmPart .selectBox input{
+	vertical-align:text-top;
+}
+.realTimeAlarmPart .selectBox .icon{
+	text-indent:23px;
+	display:inline-block;
+	color:#fff;
+}
+.realTimeAlarmPart .selectBox .icon01{
+	background:url(../images/skin1/realTimeAlarmPart02.png) no-repeat 5px center;
+}
+.realTimeAlarmPart .selectBox .icon02{
+	background:url(../images/skin1/realTimeAlarmPart03.png) no-repeat 4px center;
+}
+.realTimeAlarmPart .selectBox .icon03{
+	background:url(../images/skin1/realTimeAlarmPart04.png) no-repeat 4px center;
+}
+.realTimeAlarmPart .selectBox .icon04{
+	background:url(../images/skin1/realTimeAlarmPart05.png) no-repeat 5px center;
+}
+.realTimeAlarmPart .selectBox li:hover{
+	background:#08496a;
+}
+.realTimeAlarmPart .selectBox li.selected{
+	background:#08496a;
+}
+
+
+.realTimeAlarmPart .tabBoxUl{
+	height:100%;
+	right:0;
+	top:0;
+	left:104px;
+}
+.realTimeAlarmPart .tabBoxUl li{
+	height:100%;
+	width:40px;
+	cursor:pointer;
+	text-align:center;
+	border-radius:3px;
+	margin:0 1px;
+	font-size:12px;
+	color:#023a55;
+	line-height:18px;
+	background:#0099a6;
+	float:left;
+}
+.realTimeAlarmPart .tabBoxUl li.selected{
+	background:#00f0ff;
+}
+/*实时警情结束*/
+
+/*辖区警情开始*/
+.jurisdictionInTheDistrictPart .zIndexEchart{
+	position:absolute;
+	top:0;
+	width:100%;
+	opacity:0;
+}
+.jurisdictionInTheDistrictPart .zIndexTop{
+	z-index:10;
+	opacity:1;
+}
+.jurisdictionInTheDistrictPart .beforeDataCreateSpan{
+	background:none;
+}
+.jurisdictionInTheDistrictPart .beforeDataCreateSpan label{
+	margin-left:0;
+
+}
+.jurisdictionInTheDistrictPart .echartBox{
+	top:42px;
+	bottom:0;
+	width:100%;
+}
+.jurisdictionInTheDistrictPart .totalData{
+	height: 17px;
+	background: url(../images/skin1/areaAttendancePartIcon01.png) no-repeat 7px center;
+	text-indent: 18px;
+	color: #fff;
+	line-height: 17px;
+	font-size: 12px;
+}
+.jurisdictionInTheDistrictPart .tabBox{
+	width:190px;
+	right:7px;
+	top:0;
+	height:18px;
+	z-index:100;
+}
+.jurisdictionInTheDistrictPart .tabBox .selectBox{
+	height:100%;
+	width:100px;
+	font-size:12px;
+	color:#00f0ff;
+}
+.jurisdictionInTheDistrictPart .tabBox .selectBox span{
+	line-height:18px;
+	display:inline-block;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.jurisdictionInTheDistrictPart .tabBox .select{
+	width:60px;
+	height:100%;
+	display:inline-block;
+	vertical-align: middle;
+}
+.jurisdictionInTheDistrictPart .tabBox .select .relDiv{
+	padding-top:6px;
+}
+.jurisdictionInTheDistrictPart .selectValue{
+	width:100%;
+	height:100%;
+	line-height:18px;
+	display:inline-block;
+	background:#00f0ff url(../images/skin1/realTimeAlarmPartSelectValue.png) no-repeat 48px center;
+	text-indent:8px;
+	color:#023a55;
+	border-radius:3px;
+	cursor:pointer;
+}
+.jurisdictionInTheDistrictPart .selectWindow{
+	top:18px;
+	left:0;
+	/*width:82px;*/
+	display:none;
+}
+.jurisdictionInTheDistrictPart .sjx{
+	display:block;
+	width:11px;
+	height:6px;
+	z-index:2;
+	top:0;
+	left:48px;
+	background:url(../images/skin1/realTimeAlarmPart01.png) no-repeat center top;
+}
+.jurisdictionInTheDistrictPart .selectBox ul{
+	/*width:100%;*/
+	border:1px solid #00f6ff;
+	background:#009aa7;
+	border-radius:3px;
+	height: 116px;
+	width: 140px;
+	overflow-y: auto;
+}
+.jurisdictionInTheDistrictPart .selectBox li{
+	height:28px;
+	line-height:28px;
+	border-bottom:1px solid #3eb0b9;
+	cursor:pointer;
+}
+.jurisdictionInTheDistrictPart .selectBox .checkbox{
+	height:100%;
+	background:url(../images/skin1/checkBox.png) no-repeat 6px center;
+}
+.jurisdictionInTheDistrictPart .selectBox li.selected .checkbox{
+	background:url(../images/skin1/checkboxChecked.png) no-repeat 6px center;
+}
+.jurisdictionInTheDistrictPart .selectBox .icon{
+	text-indent:42px;
+	display:block;
+	height:100%;
+	line-height:28px;
+	color:#fff;
+}
+.jurisdictionInTheDistrictPart .selectBox .icon01{
+	background:url(../images/skin1/realTimeAlarmPart02.png) no-repeat 23px center;
+}
+.jurisdictionInTheDistrictPart .selectBox .icon02{
+	background:url(../images/skin1/realTimeAlarmPart03.png) no-repeat 23px center;
+}
+.jurisdictionInTheDistrictPart .selectBox .icon03{
+	background:url(../images/skin1/realTimeAlarmPart04.png) no-repeat 23px center;
+}
+.jurisdictionInTheDistrictPart .selectBox .icon04{
+	background:url(../images/skin1/realTimeAlarmPart05.png) no-repeat 23px center;
+}
+.jurisdictionInTheDistrictPart .selectBox li:hover{
+	background:#08496a;
+}
+.jurisdictionInTheDistrictPart .selectBox li.selected{
+	background:#08496a;
+}
+
+
+.jurisdictionInTheDistrictPart .tabBoxUl{
+	height:100%;
+	right:0;
+	top:0;
+	left:104px;
+}
+.jurisdictionInTheDistrictPart .tabBoxUl li{
+	height:100%;
+	width:40px;
+	cursor:pointer;
+	text-align:center;
+	border-radius:3px;
+	margin:0 1px;
+	font-size:12px;
+	color:#023a55;
+	line-height:18px;
+	background:#0099a6;
+	float:left;
+}
+.jurisdictionInTheDistrictPart .tabBoxUl li.selected{
+	background:#00f0ff;
+}
+/*辖区警情结束*/
+
+/*时段警情开始*/
+.timeIntervalAlarmPart .beforeDataCreateSpan{
+	background:none;
+}
+.timeIntervalAlarmPart .beforeDataCreateSpan label{
+	margin-left:0;
+
+}
+
+.timeIntervalAlarmPart .echartBox{
+	top:42px;
+	bottom:0;
+	width:100%;
+}
+.timeIntervalAlarmPart .totalData{
+	height: 17px;
+	background: url(../images/skin1/areaAttendancePartIcon01.png) no-repeat 7px center;
+	text-indent: 18px;
+	color: #fff;
+	line-height: 17px;
+	font-size: 12px;
+}
+
+.timeIntervalAlarmPart .tabBox{
+	width:100px;
+	right:7px;
+	top:0;
+	height:18px;
+	z-index:100;
+}
+.timeIntervalAlarmPart .tabBox .selectBox{
+	height:100%;
+	width:100px;
+	font-size:12px;
+	color:#00f0ff;
+}
+.timeIntervalAlarmPart .tabBox .selectBox span{
+	line-height:18px;
+	display:inline-block;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.timeIntervalAlarmPart .tabBox .select{
+	width:60px;
+	height:100%;
+	display:inline-block;
+	vertical-align: middle;
+}
+.timeIntervalAlarmPart .tabBox .select .relDiv{
+	padding-top:6px;
+}
+.timeIntervalAlarmPart .selectValue{
+	width:100%;
+	height:100%;
+	line-height:18px;
+	display:inline-block;
+	background:#00f0ff url(../images/skin1/realTimeAlarmPartSelectValue.png) no-repeat 48px center;
+	text-indent:8px;
+	color:#023a55;
+	border-radius:3px;
+	cursor:pointer;
+}
+.timeIntervalAlarmPart .selectWindow{
+	top:18px;
+	left:-77px;
+	/* width:120px; */
+	display:none;
+}
+.timeIntervalAlarmPart .sjx{
+	display:block;
+	width:11px;
+	height:6px;
+	z-index:2;
+	top:0;
+	left:87px;
+	background:url(../images/skin1/realTimeAlarmPart01.png) no-repeat center top;
+}
+.timeIntervalAlarmPart .selectBox ul{
+	/*width:100%;*/
+	border:1px solid #00f6ff;
+	height: 116px;
+	width: 136px;
+	overflow-y: auto;
+	background:#009aa7;
+	border-radius:3px;
+}
+.timeIntervalAlarmPart .selectBox li{
+	height:28px;
+	line-height:28px;
+	border-bottom:1px solid #3eb0b9;
+	cursor:pointer;
+}
+.timeIntervalAlarmPart .selectBox .checkbox{
+	height:100%;
+	background:url(../images/skin1/checkBox.png) no-repeat 6px center;
+}
+.timeIntervalAlarmPart .selectBox li.selected .checkbox{
+	background:url(../images/skin1/checkboxChecked.png) no-repeat 6px center;
+}
+.timeIntervalAlarmPart .selectBox .icon{
+	text-indent:42px;
+	display:block;
+	height:100%;
+	line-height:28px;
+	color:#fff;
+}
+.timeIntervalAlarmPart .selectBox .icon01{
+	background:url(../images/skin1/realTimeAlarmPart02.png) no-repeat 23px center;
+}
+.timeIntervalAlarmPart .selectBox .icon02{
+	background:url(../images/skin1/realTimeAlarmPart03.png) no-repeat 23px center;
+}
+.timeIntervalAlarmPart .selectBox .icon03{
+	background:url(../images/skin1/realTimeAlarmPart04.png) no-repeat 23px center;
+}
+.timeIntervalAlarmPart .selectBox .icon04{
+	background:url(../images/skin1/realTimeAlarmPart05.png) no-repeat 23px center;
+}
+.timeIntervalAlarmPart .selectBox li:hover{
+	background:#08496a;
+}
+.timeIntervalAlarmPart .selectBox li.selected{
+	background:#08496a;
+}
+
+/*时段警情结束*/
+
+/*实时警情辖区警情时段警情结束*/
+
+
+
+
+/*环京流量省界流量开始*/
+
+/*环京流量开始*/
+.surroundBJFlowPart .beforeDataCreateSpan{
+	background:none;
+}
+.surroundBJFlowPart .beforeDataCreateSpan label{
+	margin-left:0;
+}
+.surroundBJFlowPart .lists {
+	height: 100%;
+}
+.provincialTrafficPart .lists {
+	height: 100%;
+}
+.surroundBJFlowPart  .tabBox_btnBox{
+	padding-top:0;
+	padding-bottom:0;
+	border:none;
+}
+.listsBox .lists .bus-count {
+	display: inline-block;
+	width: 50%;
+	text-align: right;
+	padding-right: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.listsBox .lists .whp-count {
+	width: 50%;
+	display: inline-block;
+	text-align: left;
+	padding-left: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.zr-tb {
+	display: none;
+}
+.sy-tb {
+	display: inline;
+}
+.zr-show .zr-tb {
+	display: inline;
+}
+.zr-show .sy-tb {
+	display: none;
+}
+.surroundBJFlowPart  .tabBox_btnBox ul{
+	width:33.333%;
+	min-width:90px;
+	font-size: 0;
+	text-align: center;
+}
+
+.surroundBJFlowPart  .car1{
+	background-image:url(../images/skin1/car1.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+.surroundBJFlowPart  .car2{
+	background-image:url(../images/skin1/car2.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+.surroundBJFlowPart .listsBox{
+	top:60px;
+	bottom:0;
+	width:100%;
+}
+.surroundBJFlowPart  td{
+	color:#00ffe4;
+	font-size:12px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.surroundBJFlowPart  td:first-child{
+	padding: 0 14px;
+}
+.surroundBJFlowPart .down{
+	color:#e95c61;
+}
+.surroundBJFlowPart .up{
+	color:#5dff65;
+}
+/*环京流量结束*/
+
+
+
+/*省界流量开始*/
+.provincialTrafficPart .beforeDataCreateSpan{
+	background:none;
+}
+.provincialTrafficPart .beforeDataCreateSpan label{
+	margin-left:0;
+
+}
+.provincialTrafficPart  .tabBox_btnBox{
+	padding-top:0;
+	padding-bottom:0;
+	border:none;
+}
+.tabBox_btnBox ul {
+    font-size: 0;
+}
+.provincialTrafficPart  .tabBox_btnBox ul{
+	width:33.333%;
+	min-width:90px;
+	text-align: center;
+}
+
+.provincialTrafficPart  .car1{
+	background-image:url(../images/skin1/car1.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+.provincialTrafficPart  .car2{
+	background-image:url(../images/skin1/car2.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+.provincialTrafficPart .listsBox{
+	top:60px;
+	bottom:0;
+	width:100%;
+}
+.provincialTrafficPart  td{
+	color:#00ffe4;
+	font-size:12px;
+	height:18px;
+	line-height:18px;
+	text-align:center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.provincialTrafficPart  td:first-child{
+	padding: 0 14px;
+}
+.provincialTrafficPart .down{
+	color:#e95c61;
+}
+.provincialTrafficPart .up{
+	color:#5dff65;
+}
+/*省界流量结束*/
+.kc-count,.hc-count,.kc-qt-tb,.kc-sy-tb,.hc-qt-tb,.hc-sy-tb,.kc-some-tb,.hc-some-tb  {
+	display: none;
+}
+.kc-show .kc-count  {
+	display: inline-block;
+}
+.hc-show .hc-count {
+	display: inline-block;
+}
+.kc-show.qt-show .tb-type1 .kc-qt-tb {
+	display: inline-block;
+}
+.kc-show.sy-show .tb-type1 .kc-sy-tb {
+	display: inline-block;
+}
+.hc-show.qt-show .tb-type1 .hc-qt-tb {
+	display: inline-block;
+}
+.hc-show.sy-show .tb-type1 .hc-sy-tb {
+	display: inline-block;
+}
+/**选择某一天同比切换*/
+.kc-show .tb-type2 .kc-some-tb {
+	display: inline-block;
+}
+.hc-show .tb-type2 .hc-some-tb {
+	display: inline-block;
+}
+
+/*环京流量省界流量结束*/
+
+
+/*综合情况开始*/
+.comprehensiveSituationPart{
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.comprehensiveSituationPart .lists p{
+	color:#00ffea;
+	font-size:12px;
+	line-height:18px;
+	padding:7px 0;
+}
+.comprehensiveSituationPart .type{
+	color:#ffdd67;
+}
+.comprehensiveSituationPart .number{
+	color:#e95c61;
+}
+.comprehensiveSituationPart .lists li{
+	padding-left:43px;
+	border-bottom:1px dashed #48829e;
+}
+
+/*综合情况结束*/
+
+
+/*河北高速地图右侧竖向辅助容器开始*/
+.verticalAssistRightFloatPartBox{
+	height:100%;
+	right:0;
+	top:0;
+	width:0;
+	z-index:20;
+}
+
+
+/*河北高速地图右侧竖向辅助容器结束*/
+
+/*河北高速工具栏开始*/
+.newToolBarPart{
+	bottom:6px;
+	right:33px;
+	height:28px;
+}
+.newToolBarPart .toolBarbg{
+	border-radius:3px;
+	box-sizing:border-box;
+}
+.newToolBarPart .toggleBtn{
+	top:0;
+	left:0;
+	height:100%;
+	width:28px;
+}
+.newToolBarPart .toggleBtn .icon{
+	display:block;
+	height:100%;
+	width:100%;
+	cursor:pointer;
+}
+
+
+
+
+.newToolBarPart .toolBarBox{
+	right:0;
+	top:0;
+	width:179px;
+	height:100%;
+}
+.newToolBarPart .toolBar{
+	width:100%;
+	height:100%;
+	right:0;
+	top:0;
+	background:none;
+}
+.newToolBarPart .tool{
+	height:100%;
+	background:none;
+}
+.newToolBarPart .lrBtn{
+	width:28px;
+	margin-right:1px;
+	cursor:pointer;
+}
+.newToolBarPart .lrBtn .icon{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.newToolBarPart .searchBtn{
+	width:28px;
+	margin-right:1px;
+	cursor:pointer;
+}
+.newToolBarPart .searchBtn .icon{
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+.newToolBarPart .toolLists{
+	left:58px;
+	right:0;
+	top:0;
+}
+.newToolBarPart .tool ul.listBox{
+	height:100%;
+	margin:0;
+}
+.newToolBarPart .tool ul.listBox li{
+	height:100%;
+	width:25%;
+	border:none;
+	position:relative;
+}
+
+.newToolBarPart .tool ul.listBox li .icon{
+	display:block;
+	height:100%;
+	width:100%;
+	cursor:pointer;
+}
+
+.newToolBarPart .tool ul.listBox .layer{
+	bottom:35px;
+	right:-100px;
+	width:112px;
+	background:none;
+	text-indent:0;
+}
+.newToolBarPart .tool ul.listBox .sjx{
+	display:block;
+	width:17px;
+	height:4px;
+	z-index:10;
+	bottom:0;
+	left:-8px;
+}
+.newToolBarPart .tool ul.listBox .layerLists{
+	bottom:3px;
+	top:auto;
+	right:auto;
+	display:block;
+	left:-60px;
+	width:100%;
+	z-index:5;
+	border-radius:5px;
+}
+.newToolBarPart .tool ul.listBox .layerLists dd{
+	height:25px;    
+	text-align: left;
+    line-height: 25px;
+    font-size: 12px;
+    cursor: pointer;
+    margin:0;
+    flex-direction:column;
+    align-items:center;
+}
+.newToolBarPart .tool ul.listBox .layerLists dd input{
+	vertical-align: middle;
+	margin-left:6px;
+}
+.newToolBarPart .tool ul.listBox .layerLists dd label{
+	vertical-align:middle;
+	display:inline-block;
+	height:100%;
+	line-height:25px;
+	text-indent:26px;
+}
+/*河北高速工具栏结束*/
+
+/*警情列表开始*/
+.warningInstancePart{
+	right:10px;
+	bottom:50px;
+	width:410px;
+	height:240px;
+	background:#02111b;
+	overflow:hidden;
+}
+.warningInstancePart .head{
+	height:24px;
+	overflow:hidden;
+	background:#2c3e50;
+}
+.warningInstancePart .head h3{
+	height:100%;
+	line-height:24px;
+	color:#fff;
+	text-indent:5px;
+}
+.warningInstancePart .head .close{
+	height:100%;
+	line-height:24px;
+	color:#fff;
+	margin-right:5px;
+	cursor:pointer;
+}
+.warningInstancePart table{
+	 width:410px; 
+}
+.warningInstancePart .width1{
+	width:260px;
+}
+.warningInstancePart .width2{
+	width:20%;
+}
+.warningInstancePart .width3{
+	width:20%;
+}
+.warningInstancePart .width4{
+	width:20%;
+}
+.warningInstancePart .tHead{
+     height: 24px;
+    background: #0099a6;
+}
+.warningInstancePart .tHead th{
+     height: 100%;
+    font-size: 12px;
+    line-height: 24px;
+    background: #0099a6;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #00ffe4;
+    border-bottom:none;
+}
+.warningInstancePart .tBody{
+	top:48px;
+	bottom:0;
+	width:427px;
+	overflow:hidden;
+}
+.warningInstancePart .tBody .tBox{
+	height:100%;
+	overflow:auto;
+}
+.warningInstancePart .tBody table{
+	width:410px;
+}
+.warningInstancePart .tBody td{
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    color: #00ffe4;
+}
+
+/*警情列表结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

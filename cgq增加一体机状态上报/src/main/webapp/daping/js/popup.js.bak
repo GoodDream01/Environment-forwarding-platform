@@ -1,0 +1,59 @@
+function popup(e){
+		$("#message").remove();
+		$("#x").remove();
+		var rel = "popup_name";
+		$("#"+rel).fadeIn().css("display", "block");
+		$("#"+rel).prepend('<a href="#" class="close" id="x">x</a>');
+		$('body').on('click', 'a.close', closepopup);
+		if (e===0){
+			var html = `<div id="message"">
+						<div class="popup_head">
+                                    评价详情
+                                </div>
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                          <th width="50%">评价内容</th>
+                                          <th width="50%">实现方式</th>
+                                    
+                                        </tr>
+                                        <tr>
+                                            <td align="center">通过采集民警电台在线数量、位置和时间，掌握支大队警力在岗和执勤情况。</td>
+                                            <td align="center">实名勤务系统和电台系统。实名勤务获取当日执勤民警信息，自动调取相应电台定位信息，查看是否在线、是否在大队管辖范围内、是否在大队</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+											</div>
+		}
+		if (e===1){
+			var html = `<div id="message"">
+						<img src="images/icon.png">
+					</div>`
+		}
+		if (e===2){
+			var html = `<div id="message" class="wenzi" ">
+						文字测试
+					</div>`
+		}
+		if (e===3){
+			var html = `<div id="message" class="wenzi" ">
+
+						</div>`
+		}
+
+		$("#msg").html(html)
+	}
+
+	function closepopup(){
+		$('.popup_block').fadeOut(function() {
+			$('.popup_block').css("display", "none");
+		});
+		$('a.close').remove();
+	}
+
+	$(document).mousemove(function(e) {
+		if($('a.close').length){
+			var Force = 30;
+			var Rotate = 20;
+		}
+	});

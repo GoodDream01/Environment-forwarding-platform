@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/httpclient-4.5.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/commons-logging-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/fastjson-1.1.41.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/json-lib-2.4-jdk15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/commons-lang-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/commons-collections4-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/commons-net-3.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/jaxb-api-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/jaxb-impl-4.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/httpcore-4.4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/ojdbc6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/ezmorph-1.0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/mysql-connector-java-8.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/commons-beanutils-1.9.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Sjcs3没有路况功能/Sjcs3/WebContent/WEB-INF/lib/commons-codec-1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

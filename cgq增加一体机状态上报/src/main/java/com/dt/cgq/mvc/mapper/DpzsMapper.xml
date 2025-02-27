@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.cgq.mvc.dao.DpzsDao">
+
+	<select id="findZxsj" resultType="com.dt.cgq.mvc.pojo.Cgqsj">
+        select * from (select sbbh,MAX(time) as time from cgq_sj group by sbbh) as temp left join cgq_sj as t 
+        on temp.sbbh=t.sbbh and temp.time=t.time order by t.sbbh asc       
+	</select>
+    
+    <select id="findYcsj" resultType="com.dt.cgq.mvc.pojo.Dpzs">
+        select b.sbbh as name,IFNULL(FLOOR(sum(a.count)),0) as count from cgq_yc a right join (select sbbh from cgq_sbgl)b
+        on a.sbbh = b.sbbh and a.state = #{state} and to_days(a.time) = to_days(now()) group by b.sbbh 
+	</select>
+	
+	<select id="findFlsj" resultType="com.dt.cgq.mvc.pojo.Dpzs">
+	   select DATE_FORMAT(str_to_date(name,'%Y-%m-%d'),'%m.%d') as name,count from 
+        (select DATE_FORMAT(time,'%Y-%m-%d') as name,round(avg(fldj),2) as count from cgq_sj 
+	    where sbbh = #{sbbh} 
+	    <choose>
+	       <when test="kssj != null and kssj != '' and jssj != null and jssj != ''">
+	          and time between DATE_FORMAT(#{kssj},'%Y-%m-%d') and DATE_FORMAT(#{jssj},'%Y-%m-%d')
+	       </when>
+	       <otherwise>
+	          and time &gt;= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
+	       </otherwise>
+	    </choose>
+	    group by DATE_FORMAT(time,'%Y-%m-%d'))t
+	</select>
+	
+</mapper>

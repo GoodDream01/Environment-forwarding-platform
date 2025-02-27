@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.sjcs.mvc.dao.YjfsjlDao">
+
+	<select id="findByPage" resultType="com.dt.sjcs.mvc.pojo.Yjfsjl">
+		select * from sj_yjfsjl order by date desc
+	</select>
+
+	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.sjcs.mvc.pojo.Yjfsjl">
+        select * from sj_yjfsjl where id = #{id}
+    </select>
+
+	<insert id="insert" parameterType="com.dt.sjcs.mvc.pojo.Yjfsjl">
+    	insert into sj_yjfsjl (id,dwid,dwmc,yxzh,wjlj,date)values(#{id},#{dwid},#{dwmc},#{yxzh},#{wjlj},NOW())
+    </insert>
+
+</mapper>

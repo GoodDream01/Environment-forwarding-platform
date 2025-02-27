@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gbk"?>         
+<resouce>
+	<filterpath>    
+	    <no_filter_setting>/login/userLogin.do</no_filter_setting> 
+	    <no_filter_setting>/imagecode/getImageCode.do</no_filter_setting>   
+	</filterpath>
+	
+	<loginpath>/login.jsp</loginpath> 
+</resouce>    

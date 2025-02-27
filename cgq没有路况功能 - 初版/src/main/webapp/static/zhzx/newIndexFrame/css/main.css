@@ -1,0 +1,408 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*初始化*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    font-family:"Microsoft YaHei";
+    line-height:1em;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html{height:100%; overflow:hidden;}
+body {
+    line-height: 1;
+    font-family:"Microsoft YaHei";
+    overflow:hidden;
+	height:100%;
+}
+ol, ul,li {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+	table-layout:fixed;
+	width:100%;
+	color:#333333;
+	font-size:12px;
+}
+a { text-decoration: none;font-family:"Microsoft YaHei";border: 0;outline: none;-webkit-tap-highlight-color:transparent;}
+input{ outline: none; border: none;background:none;font-family:"Microsoft YaHei";padding:0;}
+.floatL{ float: left; }
+.floatR{ float: right; }
+.clear{clear:both;}
+.show{display: block;}
+.hide{display: none;}
+.hidden{overflow:hidden;}
+.relative{position:relative;}
+.absolute{position:absolute;}
+
+
+/*头部*/
+.header{
+	/* height:63px; */
+	height:42px;
+}
+
+.header .systemName{
+	width:490px;
+	height:100%;
+}
+
+.header .user{
+	width:177px;
+	height:100%;
+}
+.header .userName{
+	font-size:14px;
+	font-size:12px;
+	display:block;
+	height:44px;
+	height:28px;
+	text-indent:34px;
+	line-height:44px;
+	line-height:28px;
+}
+.header .systemTime{
+	font-size:12px;
+	display:block;
+	height:12px;
+	text-align:center;
+	line-height:12px;
+}
+
+.header .userName .sjx{
+	margin-left: 5px;
+    vertical-align: middle;
+}
+
+.header .bigScreenEntrance{
+	width:40px;
+	height:100%;
+	padding-top:27px;
+	box-sizing:border-box;
+}
+.header .bigScreenEntrance .entranceBtn{
+	display:block;
+	margin-left:8px;
+	width:20px;
+	height:18px;
+	cursor:pointer;
+}
+
+
+.header .popGrid2{
+    padding-top: 11px;
+    width: 126px;
+    right: 5px;
+    top: 36px;
+    z-index: 99;
+}
+.header .popCent{
+    width: 100%;
+}
+.header .popGrid2 ul{
+	/* margin: 0 8px; */
+}
+.header .popGrid2 .popB {
+    height: 10px;
+    width: 100%;
+}
+.header .popGrid2 li {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 30px;
+	height:30px;
+    border-bottom: 1px solid #fafafc;
+}
+.header .popGrid2 span{
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 2px;
+}
+.header .skinChangeName{
+	line-height:30px;
+}
+.header .popGrid2 .skinChange{
+	width:7px;
+	height:7px;
+	cursor:pointer;
+}
+.header .popGrid2 .skinChange.skinBtn3{
+	background:#000fcd;
+}
+.header .popGrid2 a{
+	display:block;
+	height:100%;
+	line-height:30px;
+}
+
+/*头部菜单*/
+.header .headerMenu{
+	height:100%;
+	margin-right:15px;
+}
+.header .menuRel{
+	width:100%;
+	height:100%;
+}
+
+	/*子菜单样式*/
+	.header .childMenu{
+		    /* float: left; */
+			position:absolute;
+			width: 78px;
+			text-align: center;
+			height: 70px;
+			height:100%;
+			cursor:pointer;
+			box-sizing:border-box;
+			overflow:hidden;
+	}
+	.header .childMenu .icon{
+		display:block;
+		width:100%;
+		height:44px;
+		height:28px;
+	}
+	.header .childMenu .name{
+		color:#b7bcc5;
+		font-size:12px;
+	}
+
+/*放置头部菜单的切换按钮样式*/
+.headerMenuToggle{
+	width:10px;
+	height:100%;
+}
+.headerMenuToggle .toggleBtn{
+	right:0;
+	width:100%;
+	cursor:pointer;
+	height:25px;
+	z-index:10;
+}
+.headerMenuToggle .upBtn{
+	top:12px;
+	/*top:8px;*/
+}
+.headerMenuToggle .downBtn{
+	/*top:36px;*/
+	/*top:24px;*/
+	top: 12px;
+}
+
+
+/*菜单与iframe开始*/
+.menu_iframe{
+	top:63px;
+	top:42px;
+	bottom:0;
+	width:100%;
+}
+.menu_iframe .relDiv{
+	width:100%;
+	height:100%;
+}
+.menu_iframe .movePoint{
+	left:10px;
+	height:100%;
+}
+.menu_iframe .pointRelDiv{
+	height:100%;
+}
+/*左侧菜单开始*/
+.menu_iframe .menuBox{
+	width:200px;
+	height:100%;
+	right:0;
+	overflow-y:auto;
+}
+
+.menu_iframe .menuBox .menuTitle{
+	display:block;
+	height:37px;
+	background:url(../images/menuMore00.png) no-repeat 16px center;
+}
+.menu_iframe .menuBox .menuTitle.selected{
+	background:url(../images/menuMore01.png) no-repeat 16px center;
+}
+.menu_iframe .menuBox .menuTitle span{
+	display:block;
+	margin-left:37px;
+	line-height:36px;
+	height:36px;
+	color:#fff;
+	font-size:12px;
+}
+.menu_iframe .menuBox .menuTitle.selected span{
+	color:#fff;
+	border-bottom:none;
+}
+
+.menu_iframe .menuBox .menu2{
+	display:none;
+}
+.menu_iframe .menuBox ul li a{
+	height: 36px;
+	line-height: 36px; 
+	display: block; 
+	color: #fff; 
+	margin-left: 45px;
+	text-indent:11px;
+	font-size:12px;
+}
+
+/*左侧菜单结束*/
+
+/*右侧iframe开始*/
+.menu_iframe .tab_iframe{
+	height:100%;
+	left:0;
+	background:#fff;
+}
+.tabIframeChildBox{
+	width:100%;
+	height:100%;
+}
+.tabIframeChildBox .leftBtn{
+	height:100%;
+	width:35px;
+	left:0;
+	z-index:10;
+	cursor:pointer;
+	background:#062373 url(../images/goL.png) no-repeat center center;
+}
+.tabIframeChildBox .leftBtn:hover{
+	background:#062373 url(../images/goL1.png) no-repeat center center;
+}
+.tabIframeChildBox .rightBtn{
+	height:100%;
+	width:35px;
+	right:113px;
+	z-index:10;
+	cursor:pointer;
+	background:#062373 url(../images/goR.png) no-repeat center center;
+}
+.tabIframeChildBox .rightBtn:hover{
+	background:#062373 url(../images/goR1.png) no-repeat center center;
+}
+.tabIframeChildBox .removeAll{
+	width:113px;
+	height:100%;
+	right:0;
+	z-index:12;
+	cursor:pointer;
+}
+.tabIframeChildBox .removeAll .relDiv{
+	height:100%;
+}
+.tabIframeChildBox .removeAll .relDiv .operateTitle{
+	display:block;
+	height:100%;
+	line-height:28px;
+	font-size:12px;
+	text-indent:38px;
+}
+.menu_iframe .iframeTabBox .removeAll ul{
+	position:absolute;
+	top:28px;
+	left:0;
+	height:auto;
+	width:100%;
+	display:none;
+}
+.tabIframeChildBox .removeAll li{
+	line-height:24px;
+	height:24px;
+	width:100%;
+	text-align:center;
+	font-size:12px;
+	color:#333;
+}
+.tabIframeChildBox .removeAll li:hover{
+	background:#b3b4be;
+	color:#fff;
+}
+.menu_iframe .iframeTabBox{
+	height:28px;
+	border-top:1px solid #000a17;
+	border-bottom:1px solid #000a17;
+}
+.menu_iframe .iframeTabBox .liBox{
+	height:100%;
+	left:0;
+	right:0;
+	z-index:5;
+}
+.menu_iframe .iframeTabBox ul{
+	height:100%;
+	overflow:hidden;
+}
+.menu_iframe .iframeTabBox li{
+	float:left;
+	height:100%;
+	line-height:28px;
+	padding-left:10px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.menu_iframe .iframeTabBox .tabName{
+	font-size:12px;
+	line-height:28px;
+	float:left;
+	color:#575b74;
+	padding-right:10px;
+}
+.menu_iframe .iframeTabBox .tabClose{
+	cursor:pointer;
+	float:right;
+	width:16px;
+	height:50%;
+}
+.menu_iframe .iframeBox{
+	top:29px;
+	bottom:0;
+	width:100%;
+	/*height:100%;*/
+}
+.menu_iframe .mapFrame{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+}
+.menu_iframe .mapFrame.downZindex{
+	z-index:1;
+}
+/*右侧iframe结束*/
+
+/*菜单与iframe结束*/
+
+
+
+
+    

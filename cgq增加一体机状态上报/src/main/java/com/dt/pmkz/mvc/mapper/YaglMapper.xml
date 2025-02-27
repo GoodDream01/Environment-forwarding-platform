@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.pmkz.mvc.dao.YaglDao">
+
+	<select id="findByPage" resultType="com.dt.pmkz.mvc.pojo.Yagl">
+		select a.*,b.ip,b.bzwz from t_yagl a,t_pm b where a.pmid = b.id
+		<if test="param.yadj!=null and param.yadj!=''">
+			and yadj = #{param.yadj} 
+		</if>
+	</select>
+	
+ 	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.pmkz.mvc.pojo.Yagl">
+        select * from t_yagl where id = #{id}
+    </select>
+
+	<insert id="insert" parameterType="com.dt.pmkz.mvc.pojo.Yagl">
+    	insert into t_yagl (id,pmid,yadj,yamc,yanr,tlsj,czfs,txsd,ztys,ztkg,wznr
+    	)values(#{id},#{pmid},#{yadj},#{yamc},#{yanr},#{tlsj},#{czfs},#{txsd},#{ztys},#{ztkg},#{wznr}) 
+    </insert>
+   
+    <update id="update" parameterType="com.dt.pmkz.mvc.pojo.Yagl">
+    	update t_yagl set yamc = #{yamc},yanr = #{yanr},
+    	tlsj = #{tlsj},czfs = #{czfs},txsd = #{txsd},ztys = #{ztys},ztkg = #{ztkg},wznr = #{wznr}
+    	where pmid = #{pmid} and yadj = #{yadj}
+    </update>
+    
+    <delete id="delete">
+    	delete from t_yagl where id = #{id}
+    </delete>
+    
+    <select id="selectByYaPm" parameterType="string" resultType="com.dt.pmkz.mvc.pojo.Yagl">
+        select * from t_yagl where yadj = #{yadj} and pmid = #{pmid}
+    </select>
+    
+    <select id="selectByYa" parameterType="string" resultType="com.dt.pmkz.mvc.pojo.Yagl">
+        select * from t_yagl where yadj = #{yadj}
+    </select>
+    
+</mapper>

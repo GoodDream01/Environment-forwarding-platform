@@ -1,0 +1,10 @@
+[
+    {id:'temperature',text:'空气温度'},
+    {id:'humidity',text:'空气湿度'},
+    {id:'pressure',text:'大气压力'},
+    {id:'windSpeed',text:'风速'},
+    {id:'windDirection',text:'风向'},
+    {id:'rainfall',text:'降雨量'},
+    {id:'cumulativerainfall',text:'雨量累计'},
+    {id:'solarRadiation',text:'太阳辐射'}
+]

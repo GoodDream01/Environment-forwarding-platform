@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.cgq.mvc.dao.RyglDao">
+
+	<select id="findByPage" resultType="com.dt.cgq.mvc.pojo.Rygl">
+		select * from cgq_rygl
+		<where> 
+			<if test="(param.ssid==null or param.ssid=='') and param.qyid!=null and param.qyid!=''">
+	            and qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+	            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.qyid}) t2) t3 WHERE (ischild != 0 OR id = #{param.qyid}))
+	        </if>
+	        <if test="param.ssid!=null and param.ssid!=''">
+	            and qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+	            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.ssid}) t2) t3 WHERE (ischild != 0 OR id = #{param.ssid}))
+	        </if>
+	 		<if test="param.name!=null and param.name!=''">
+		 		and name like concat(concat('%', #{param.name}), '%') 
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectAll" resultType="com.dt.cgq.mvc.pojo.Rygl">
+		select * from cgq_rygl 
+	</select>
+	
+ 	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.cgq.mvc.pojo.Rygl">
+        select * from cgq_rygl where id = #{id}
+    </select>
+
+	<insert id="insert" parameterType="com.dt.cgq.mvc.pojo.Rygl">
+    	insert into cgq_rygl (id,name,phone,qyid,qymc)values(#{id},#{name},#{phone},#{qyid},#{qymc}) 
+    </insert>
+    
+    <update id="update" parameterType="com.dt.cgq.mvc.pojo.Rygl">
+    	update cgq_rygl set
+			name = #{name}, 
+			phone = #{phone},
+			qyid = #{qyid},
+			qymc = #{qymc}
+    	where id = #{id}
+    </update>
+    
+    <delete id="delete">
+    	delete from cgq_rygl where id = #{id}
+    </delete>
+    
+</mapper>

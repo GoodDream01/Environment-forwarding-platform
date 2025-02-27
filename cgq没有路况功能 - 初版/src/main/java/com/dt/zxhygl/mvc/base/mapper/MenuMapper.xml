@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dt.zxhygl.mvc.base.dao.IMenuDao">
+	<!-- 定义java Bean的属性与数据库的列之间的映射 --> 
+    <resultMap id="BaseResultMap" type="Menu">
+        <id property="menuId" column="MENU_ID" />
+        <result property="menuCode" column="MENU_CODE" />
+        <result property="menuName" column="MENU_NAME" />
+        <result property="menuLevel" column="MENU_LEVEL" />
+        <result property="menuPcode" column="MENU_PCODE" />
+        <result property="menuPath" column="MENU_PATH" />
+        <result property="menuStatus" column="MENU_STATUS" />
+        <result property="menuOrder" column="MENU_ORDER" />
+        <result property="mneuType" column="MNEU_TYPE" />
+        <result property="menuIcon" column="MENU_ICON" />
+        <result property="roleId" column="ROLEID" />
+        <result property="dwbh" column="DWBH" />
+    </resultMap>
+    
+    <!--根据主键查询一条用户数据-->
+    <!-- 
+        id：唯一标识 一个statement
+        #{}：表示 一个占位符，如果#{}中传入简单类型的参数，#{}中的名称随意
+        parameterType：输入 参数的类型，通过#{}接收parameterType输入 的参数
+        resultType：输出结果 类型，不管返回是多条还是单条，指定单条记录映射的pojo类型(不可与resultMap同用)
+        resultMap：输出结果 类型，不管返回是多条还是单条，指定单条记录映射的pojo类型(不可与resultType同用)
+     -->
+    <select id="selectByPrimaryKey" parameterType="string" resultMap="BaseResultMap">
+        select * from hy_menu where menu_id=#{id}
+    </select>
+    
+    <!-- 根据菜单名称查询菜单信息，可能返回多条
+    ${}：表示sql的拼接，通过${}接收参数，将参数的内容不加任何修饰拼接在sql中。
+     -->
+    <select id="selectMenuByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from hy_menu where menu_status='0' and MENU_NAME like '%${value}%'
+    </select>
+    
+    <!-- 根据菜单级别返回菜单信息,可能返回多条 -->
+    <select id="selectMenuByLevel" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from hy_menu where menu_status='0' and  MENU_LEVEL=#{value} order by cast(MENU_ORDER as unsigned int)
+    </select>
+    
+    <!-- 根据菜单级别返回菜单信息,可能返回多条 -->
+    <select id="selectMenuByPcode" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from hy_menu where menu_status='0' and MENU_PCODE=#{value} order by cast(MENU_ORDER as unsigned int)
+    </select>
+    
+    <select id="selectAllMenu"  resultMap="BaseResultMap">
+    	<bind name="jslxLike" value="'%' + jslx + '%'" />
+        select * from hy_menu 
+    	<where> 
+    	 	menu_status='0' and roleid like #{jslxLike}
+    	 	<!-- 
+	    	<if test="jslx!=null and jslx!=''">
+	    		<if test=' jslx == "2" '>
+	    			<bind name="dwbhLike" value="'%' + dwbh + '%'" />
+	    			and dwbh like #{dwbhLike}
+	    		</if>
+	    	</if>
+	    	 -->
+    	</where>
+    	 order by CONVERT(menu_level,SIGNED),CONVERT(menu_order,SIGNED),menu_pcode
+    </select>
+    
+    <!-- 根据菜单级别返回菜单信息,可能返回多条 -->
+    <select id="selectAllList"  resultMap="BaseResultMap">
+        select * from hy_menu where menu_status='0'
+    </select>
+    
+    <!-- 插入菜单 -->
+    <insert id="insertMenu" parameterType="Menu">
+    	insert into hy_menu (
+			menu_id, 
+			menu_code, 
+			menu_name, 
+			menu_level, 
+			menu_pcode, 
+			menu_path, 
+			menu_status, 
+			menu_order, 
+			mneu_type, 
+			menu_icon
+    	)values(
+			#{menuId}, 
+			#{menuCode}, 
+			#{menuName}, 
+			#{menuLevel}, 
+			#{menuPcode}, 
+			#{menuPath}, 
+			#{menuStatus}, 
+			#{menuOrder}, 
+			#{mneuType}, 
+			#{menuIcon}
+    	)
+    </insert>
+    
+    <!-- 修改菜单 -->
+    <update id="updateMenu" parameterType="Menu">
+    	update hy_menu set
+			menu_code=#{menuCode}, 
+			menu_name=#{menuName}, 
+			menu_level=#{menuLevel}, 
+			menu_pcode=#{menuPcode}, 
+			menu_path=#{menuPath}, 
+			menu_status=#{menuStatus}, 
+			menu_order=#{menuOrder}, 
+			mneu_type=#{mneuType}, 
+			menu_icon=#{menuIcon}
+    	where menu_id=#{menuId}
+    </update>
+    
+    <!-- 删除菜单 -->
+    <delete id="deleteMenu" parameterType="string">
+    	delete from hy_menu where menu_id=#{menuId}
+    </delete>
+    
+    <select id="getAllMenu"  resultMap="BaseResultMap">
+        select * from hy_menu where menu_status='0' order by menu_level,menu_order,menu_pcode
+    </select>
+    
+    
+    <update id="updateMenuRole" parameterType="java.util.List">
+	    <foreach collection="list" item="item" index="index" open="" close=";" separator=";">
+	    	update hy_menu 
+	    	<trim prefix="set" suffixOverrides=",">
+	
+				roleid=#{item.roleId,jdbcType=VARCHAR},
+				dwbh=#{item.dwbh,jdbcType=VARCHAR}
+
+			 </trim>	
+			where 
+				menu_id=#{item.menuId,jdbcType=VARCHAR}
+		</foreach>		
+    </update>
+
+</mapper>

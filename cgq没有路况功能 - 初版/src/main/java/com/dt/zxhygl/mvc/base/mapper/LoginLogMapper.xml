@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dt.zxhygl.mvc.base.dao.ILoginLogDao">
+
+    <!--根据主键查询一条用户数据-->
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultType="LoginLog">
+        select * from hy_login_log a where a.id=#{id}
+    </select>
+
+    
+    <!--查询所有用户数据 -->
+    <select id="findByPage" resultType="LoginLog">
+        select * from hy_login_log a
+		<where> 
+			<if test="param!=null">
+		 		<if test="param.username!=null and param.username!=''">
+			 		<bind name="usernameLike" value="'%' + param.username + '%'" />
+					and a.username like #{usernameLike} 
+				</if>
+			</if>
+		</where>
+		order by logintime desc
+    </select>
+    
+    <!-- 插入菜单 -->
+    <insert id="insert" parameterType="LoginLog">
+    	insert into hy_login_log (
+			id, 
+			username, 
+			loginip, 
+			hostname, 
+			browser, 
+			osname, 
+			logintime, 
+			result,
+			xm,
+			type,
+			role
+    	)values(
+			#{id,jdbcType=VARCHAR}, 
+			#{username,jdbcType=VARCHAR}, 
+			#{loginip,jdbcType=VARCHAR}, 
+			#{hostname,jdbcType=VARCHAR}, 
+			#{browser,jdbcType=NUMERIC}, 
+			#{osname,jdbcType=VARCHAR}, 
+			#{logintime,jdbcType=VARCHAR}, 
+			#{result,jdbcType=VARCHAR},
+			#{xm,jdbcType=VARCHAR},
+			#{type,jdbcType=VARCHAR},
+			#{role,jdbcType=VARCHAR}
+			
+    	)
+    </insert>
+    
+</mapper>

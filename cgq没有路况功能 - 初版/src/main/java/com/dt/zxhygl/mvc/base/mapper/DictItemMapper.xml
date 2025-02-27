@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dt.zxhygl.mvc.base.dao.IDictItemDao">
+    
+    <!--根据主键查询一条用户数据-->
+    <select id="selectByPrimaryKey" parameterType="string" resultType="DictItem">
+        select * from hy_dict_item where id=#{id}
+    </select>
+    
+    <select id="selectDictItemByTypeCode" parameterType="string" resultType="DictItem">
+        select * from hy_dict_item where typecode = #{typeCode} and status='0' order by sort
+    </select>
+    
+    <select id="findByPage" resultType="DictItem">
+        select * from hy_dict_item 
+		<where> 
+			<if test="param!=null">
+		 		<if test="param.typeCode!=null and param.typeCode!=''">
+			 		and typecode = #{param.typeCode}
+				</if>
+			</if>
+		</where>
+		order by typecode,sort
+    </select>
+    
+    <select id="getSort" parameterType="string" resultType="string">
+        select (IFNULL(max(sort),0)+1) as sort from hy_dict_item where typecode = #{typeCode} 
+    </select>
+    
+    <select id="findAllList" resultType="DictItem">
+        select * from hy_dict_item where status='0' order by typecode,sort
+    </select>
+
+	<select id="selectDictItemCode" resultType="DictItem">
+		select * from hy_dict_item where typecode = #{typeCode} and value = #{code}
+	</select>
+
+    <!-- 插入菜单 -->
+    <insert id="insert" parameterType="DictItem">
+    	insert into hy_dict_item (
+			id, 
+			sort, 
+			text, 
+			value, 
+			typecode, 
+			status, 
+			bz
+    	)values(
+			#{id,jdbcType=VARCHAR}, 
+			#{sort,jdbcType=VARCHAR}, 
+			#{text,jdbcType=VARCHAR}, 
+			#{value,jdbcType=VARCHAR}, 
+			#{typeCode,jdbcType=NUMERIC}, 
+			#{status,jdbcType=VARCHAR}, 
+			#{bz,jdbcType=VARCHAR} 
+			
+    	)
+    </insert>
+    
+    <update id="update" parameterType="DictItem">
+    	update hy_dict_item 
+    	<trim prefix="set" suffixOverrides=",">
+			<if test="sort!=null">sort=#{sort,jdbcType=VARCHAR}, </if>
+			<if test="text!=null">text=#{text,jdbcType=VARCHAR}, </if>
+			<if test="value!=null">value=#{value,jdbcType=VARCHAR},</if> 
+			<if test="typeCode!=null">typecode=#{typeCode,jdbcType=VARCHAR}, </if>
+			<if test="status!=null">status=#{status,jdbcType=VARCHAR}, </if>
+			<if test="bz!=null">bz=#{bz,jdbcType=VARCHAR}, </if>
+		 </trim>	
+		where 
+			id=#{id,jdbcType=VARCHAR}
+    </update>
+    
+    <delete id="delete" parameterType="string">
+    	delete from hy_dict_item where id=#{id,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.cgq.mvc.dao.SbglDao">
+
+	<select id="findByPage" resultType="com.dt.cgq.mvc.pojo.Sbgl">
+		select * from cgq_sbgl
+		<where>
+			<if test="(param.ssid==null or param.ssid=='') and param.qyid!=null and param.qyid!=''">
+	            and qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+	            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.qyid}) t2) t3 WHERE (ischild != 0 OR id = #{param.qyid}))
+	        </if>
+	        <if test="param.ssid!=null and param.ssid!=''">
+	            and qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+	            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.ssid}) t2) t3 WHERE (ischild != 0 OR id = #{param.ssid}))
+	        </if>
+	        <if test='param.bj=="1" || param.bj=="3"'>
+		 		 and bj = '1'
+			</if> 
+			<if test='param.bj=="2" || param.bj=="4"'>
+		 		 and bj = '2'
+			</if> 
+	 		<if test="param.sbbh!=null and param.sbbh!=''">
+	 		    and sbbh like concat(concat('%', #{param.sbbh}), '%')
+			</if>
+			<if test="param.mc!=null and param.mc!=''">
+				and mc like concat(concat('%', #{param.mc}), '%')
+			</if>
+			<if test="param.dz!=null and param.dz!=''">
+				and dz like concat(concat('%', #{param.dz}), '%')
+			</if>
+		</where>
+	</select>
+	<select id="findByPage1" resultType="com.dt.cgq.mvc.pojo.Cgqsj">
+		select * from cgq_sj where sbbh = #{param.sbbh} and time BETWEEN CONCAT(CURDATE(),' 00:00:00') AND CONCAT(CURDATE(),' 23:59:59') order by time desc
+	</select>
+	
+	<select id="selectAll" resultType="com.dt.cgq.mvc.pojo.Sbgl">
+		select * from cgq_sbgl
+		<where>
+			<if test="param.qyid!=null and param.qyid!=''">
+	            and qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+	            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.qyid}) t2) t3 WHERE (ischild != 0 OR id = #{param.qyid}))
+	        </if>
+	        <if test='param.bj=="1" || param.bj=="3"'>
+		 		 and bj = '1'
+			</if> 
+			<if test='param.bj=="2" || param.bj=="4"'>
+		 		 and bj = '2'
+			</if> 
+	    </where>
+	</select>
+	
+ 	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.cgq.mvc.pojo.Sbgl">
+        select * from cgq_sbgl where id = #{id}
+    </select>
+    
+	<select id="selectCgqsj" resultType="com.dt.cgq.mvc.pojo.Cgqsj">
+        select * from CGQ_SJ where sbbh = #{sbbh}
+    </select>
+    
+    <select id="selectSbbh" resultType="java.lang.String">
+        select sbbh from cgq_sbgl where jd = #{jd} and wd = #{wd}
+    </select>
+    
+	<insert id="insert" parameterType="com.dt.cgq.mvc.pojo.Sbgl">
+    	insert into cgq_sbgl (id,sbbh,jd,wd,fzr,fzrxm,dz,mc,qyid,qymc,fz,fzmc,deviceid,bj,xsfw)values(#{id},#{sbbh},#{jd},#{wd},#{fzr},#{fzrxm},#{dz},#{mc},#{qyid},#{qymc},#{fz},#{fzmc},#{deviceid},#{bj},#{xsfw})
+    </insert>
+    
+    <update id="update" parameterType="com.dt.cgq.mvc.pojo.Sbgl">
+    	update cgq_sbgl set
+			sbbh = #{sbbh}, 
+			jd = #{jd},
+			wd = #{wd},
+			fzr = #{fzr},
+			fzrxm = #{fzrxm},
+			dz = #{dz},
+			mc = #{mc},
+			qyid = #{qyid},
+			qymc = #{qymc},
+			fz = #{fz},
+			fzmc = #{fzmc},
+			deviceid = #{deviceid},
+			bj = #{bj},
+			xsfw = #{xsfw}
+    	where id = #{id}
+    </update>
+    
+    <delete id="delete">
+    	delete from cgq_sbgl where id = #{id}
+    </delete>
+    
+    <select id="selectSb" resultType="com.dt.cgq.mvc.pojo.Sbgl">
+		select a.sbbh,a.fldj,b.jd,b.wd,b.xsfw from (select t.sbbh,t.fldj,t.tdh from(select sbbh,MAX(time) as time from cgq_sj group by sbbh)as temp 
+		left join cgq_sj as t on temp.sbbh = t.sbbh and temp.time = t.time order by t.sbbh asc)a,
+		cgq_sbgl b where a.sbbh = b.sbbh 
+		<if test='bj=="1"'>
+		 	and b.bj = '1'
+		</if> 
+		<if test='bj=="2"'>
+		 	and b.bj = '2' and a.tdh='10'
+		</if>
+	</select>
+	
+	<select id="selectSfzx" resultType="com.dt.cgq.mvc.pojo.Cgqsj">
+		<if test='bj=="1"'>
+		select t.sbbh,t.fldj from (select sbbh,max(xtsj) xtsj from cgq_sj where xtsj between DATE_ADD(NOW(), INTERVAL - 60 MINUTE) and NOW() group by sbbh)as temp, 
+		cgq_sj t where temp.sbbh = t.sbbh and temp.xtsj = t.xtsj
+		</if>
+	    <if test='bj=="2"'>
+		select t.sbbh,t.fldj from (select sbbh,max(time) time from cgq_sj where time between DATE_ADD(NOW(), INTERVAL - 60 MINUTE) and NOW() group by sbbh)as temp, 
+		cgq_sj t where temp.sbbh = t.sbbh and temp.time = t.time
+		</if>
+	</select>
+	
+</mapper>

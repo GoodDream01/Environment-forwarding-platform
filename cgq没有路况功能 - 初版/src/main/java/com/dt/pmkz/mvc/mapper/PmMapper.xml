@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.pmkz.mvc.dao.PmDao">
+
+	<select id="findByPage" resultType="com.dt.pmkz.mvc.pojo.Pm">
+		select * from t_pm order by ip asc
+	</select>
+	
+	<select id="selectAll" resultType="com.dt.pmkz.mvc.pojo.Pm">
+		select * from t_pm
+	</select>
+	
+ 	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.pmkz.mvc.pojo.Pm">
+        select * from t_pm where id = #{id}
+    </select>
+
+	<insert id="insert" parameterType="com.dt.pmkz.mvc.pojo.Pm">
+    	insert into t_pm (id,ip,dk,dz,bzwz,pmlx)values(#{id},#{ip},#{dk},#{dz},#{bzwz},#{pmlx}) 
+    </insert>
+    
+    <update id="update" parameterType="com.dt.pmkz.mvc.pojo.Pm">
+    	update t_pm set ip = #{ip},dk = #{dk},dz = #{dz},bzwz = #{bzwz},pmlx = #{pmlx} where id = #{id}
+    </update>
+    
+    <delete id="delete">
+    	delete from t_pm where id = #{id}
+    </delete>
+    
+</mapper>

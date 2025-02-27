@@ -1,0 +1,88 @@
+package com.dt.pmkz.mvc.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Service;
+
+import com.dt.common.interceptor.pagination.model.PageBounds;
+import com.dt.common.utils.ComUtils;
+import com.dt.pmkz.mvc.dao.YaglDao;
+import com.dt.pmkz.mvc.pojo.Yagl;
+import com.dt.pmkz.mvc.service.YaglService;
+
+@Service
+public class YaglServiceImpl implements YaglService{
+
+	@Resource
+	private YaglDao dao;
+	
+	@Override
+	public Yagl selectByPrimaryKey(String id) {
+		// TODO Auto-generated method stub
+		return dao.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<Yagl> findByPage(PageBounds pageBounds) {
+		// TODO Auto-generated method stub
+		return dao.findByPage(pageBounds, pageBounds.getParamMap());
+	}
+
+	@Override
+	public List<Yagl> selectAll(Map param) {
+		// TODO Auto-generated method stub
+		return dao.selectAll(param);
+	}
+
+	@Override
+	public boolean insert(Yagl t) throws Exception {
+		// TODO Auto-generated method stub
+		t.setId(ComUtils.getUniqueString());
+		return dao.insert(t)>0;
+	}
+
+	@Override
+	public boolean update(Yagl t) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.update(t)>0;
+	}
+
+	@Override
+	public boolean delete(String id) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.delete(id)>0;
+	}
+
+	@Override
+	public boolean save(Yagl t) throws Exception {
+		// TODO Auto-generated method stub
+		if(!StringUtils.isNotEmpty(t.getId())) {
+			return insert(t);
+		}else{
+			return update(t);
+		}
+	}
+
+	@Override
+	public boolean updateBatch(List<Yagl> list) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Yagl selectByYaPm(String yadj, String pmid) {
+		// TODO Auto-generated method stub
+		return dao.selectByYaPm(yadj, pmid);
+	}
+
+	@Override
+	public List<Yagl> selectByYa(String yadj) {
+		// TODO Auto-generated method stub
+		return dao.selectByYa(yadj);
+	}
+
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:util="http://www.springframework.org/schema/util"  
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc" 
+    xmlns:cache="http://www.springframework.org/schema/cache" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans.xsd    
+    http://www.springframework.org/schema/context    
+    http://www.springframework.org/schema/context/spring-context.xsd    
+    http://www.springframework.org/schema/mvc    
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/aop    
+    http://www.springframework.org/schema/aop/spring-aop.xsd 
+    http://www.springframework.org/schema/tx    
+    http://www.springframework.org/schema/tx/spring-tx.xsd    
+	http://www.springframework.org/schema/util  
+	http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/jdbc    
+    http://www.springframework.org/schema/jdbc/spring-jdbc.xsd"> 
+
+	<!-- 数据源配置 -->
+	<bean id="dataSource_local" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<!-- 配置最大连接数 -->
+		<property name="maxActive" value="${jdbc.maxActive}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		
+		<!-- 配置监控统计拦截的filters -->
+		<property name="filters" value="${datasource.filters}" />
+		<property name="defaultAutoCommit" value="${datasource.defaultAutoCommit}" />
+		<!-- 配置初始化连接数 -->
+		<property name="initialSize" value="${datasource.initialSize}" />
+		<!-- 配置最小连接数 -->
+		<property name="minIdle" value="${datasource.minIdle}" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="${datasource.maxWait}" />
+		<property name="testWhileIdle" value="${datasource.testWhileIdle}" />
+		<property name="testOnBorrow" value="${datasource.testOnBorrow}" />
+		<property name="testOnReturn" value="${datasource.testOnReturn}" />
+		<property name="validationQuery" value="${datasource.validationQuery}" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="${datasource.timeBetweenEvictionRunsMillis}" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${datasource.minEvictableIdleTimeMillis}" />
+		<property name="maxEvictableIdleTimeMillis" value="${datasource.maxEvictableIdleTimeMillis}" />
+		<property name="logAbandoned" value="${datasource.logAbandoned}" />
+		<property name="removeAbandoned" value="${datasource.removeAbandoned}" />
+		<property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}" />
+		<!-- asyncInit是1.1.4中新增加的配置，如果有initialSize数量较多时，打开会加快应用启动时间 -->
+		<property name="asyncInit" value="${datasource.asyncInit}" />
+	</bean>
+
+    <!-- 配置spring与mybatis结合 -->  
+    <bean id="sqlSessionFactory_local" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource_local" />  
+        <property name="configLocation" value="classpath:config/mybatis/mybatis-config.xml" />
+        <!-- 自动扫描mapping.xml文件 -->  
+        <property name="mapperLocations">
+        	<array>
+        		<value>classpath:com/dt/zxhygl/mvc/**/mapper/*.xml</value>
+				<value>classpath:com/dt/cgq/mvc/**/mapper/*.xml</value>
+				<value>classpath:com/dt/pmkz/mvc/**/mapper/*.xml</value>
+				<value>classpath:com/dt/sjcs/mvc/**/mapper/*.xml</value>
+        	</array>
+        </property>
+    </bean>  
+    
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
+    <bean id="mapperScannerConfigurer_local" class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
+        <property name="basePackage" value="com.dt.zxhygl.mvc.**.dao;com.dt.cgq.mvc.**.dao;com.dt.pmkz.mvc.**.dao;com.dt.sjcs.mvc.**.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_local"></property>  
+    </bean> 
+    
+	<!-- 配置spring事务管理器 -->
+    <bean id="transactionManager_local"  
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="dataSource_local" />  
+    </bean>  
+
+    <!-- 通知 -->
+    <tx:advice id="txAdvice_local" transaction-manager="transactionManager_local">
+   	     <tx:attributes>
+            <!-- 传播行为 -->
+            <!-- REQUIRED：必须要有事务, 如果没有就在上下文创建一个 -->
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="insert*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <!-- 支持,如果有就有,没有就没有 -->
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    
+    <!-- aop -->
+     <aop:config>
+    	<aop:advisor advice-ref="txAdvice_local" pointcut="(execution(* com.dt.zxhygl.mvc.**.service.impl.*.*(..))) or (execution(* com.dt.cgq.mvc.**.service.impl.*.*(..))) or (execution(* com.dt.pmkz.mvc.**.service.impl.*.*(..))) or (execution(* com.dt.sjcs.mvc.**.service.impl.*.*(..)))"/>
+    </aop:config>
+
+</beans>    

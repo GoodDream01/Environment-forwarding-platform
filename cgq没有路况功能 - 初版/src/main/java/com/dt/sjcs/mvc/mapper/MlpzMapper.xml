@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.sjcs.mvc.dao.MlpzDao">
+
+	<select id="findByPage" resultType="com.dt.sjcs.mvc.pojo.Mlpz">
+		select * from sj_mlpz
+	</select>
+
+	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.sjcs.mvc.pojo.Mlpz">
+        select * from sj_mlpz where id = #{id}
+    </select>
+
+	<insert id="insert" parameterType="com.dt.sjcs.mvc.pojo.Mlpz">
+    	insert into sj_mlpz (id,sbid,value,text,zdsj,ym,dk,xtsj)values(#{id},#{sbid},#{value},#{text},#{zdsj},#{ym},#{dk},NOW())
+    </insert>
+
+	<update id="update" parameterType="com.dt.sjcs.mvc.pojo.Mlpz">
+    	update sj_mlpz set sbid = #{sbid},value = #{value},text = #{text},zdsj = #{zdsj},ym = #{ym},dk = #{dk} where id = #{id}
+    </update>
+
+	<delete id="delete">
+    	delete from sj_mlpz where id = #{id}
+    </delete>
+
+</mapper>

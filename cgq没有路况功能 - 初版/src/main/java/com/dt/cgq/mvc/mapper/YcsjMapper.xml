@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.cgq.mvc.dao.YcsjDao">
+
+	<select id="findByPage" resultType="com.dt.cgq.mvc.pojo.Ycsj">
+		select a.*,b.sbbh,b.mc from cgq_spxx a,cgq_sbgl b where a.devid = b.deviceid
+	    <if test="(param.ssid==null or param.ssid=='') and param.qyid!=null and param.qyid!=''">
+            and b.qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.qyid}) t2) t3 WHERE (ischild != 0 OR id = #{param.qyid}))
+        </if>
+        <if test="param.ssid!=null and param.ssid!=''">
+            and b.qyid in (SELECT id FROM (SELECT t1.*, IF (FIND_IN_SET(pid, @pids) <![CDATA[ > ]]> 0, @pids := CONCAT(@pids, ',', id), 0) AS ischild FROM
+            (SELECT * FROM t_area t ORDER BY pid, id) t1,(SELECT @pids := #{param.ssid}) t2) t3 WHERE (ischild != 0 OR id = #{param.ssid}))
+        </if>
+        <if test="param.kssj != null and param.kssj != '' and param.jssj != null and param.jssj != ''">
+	        and a.xtsj between DATE_FORMAT(#{param.kssj},'%Y-%m-%d') and DATE_FORMAT(#{param.jssj},'%Y-%m-%d')
+	    </if>
+ 		<if test="param.sbbh!=null and param.sbbh!=''">
+	 		and a.sbbh like concat(concat('%', #{param.sbbh}), '%')
+		</if>
+		order by a.xtsj desc
+	</select>
+	
+ 	<select id="selectByPrimaryKey" parameterType="string" resultType="com.dt.cgq.mvc.pojo.Ycsj">
+        select * from cgq_spxx where id = #{id}
+    </select>
+    
+</mapper>

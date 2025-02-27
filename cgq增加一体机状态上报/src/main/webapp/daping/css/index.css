@@ -1,0 +1,47 @@
+/***** ZhiLing *****/
+
+.zhiling-container
+{
+    display: flex; justify-content: space-between; flex-wrap: wrap; width: 360px; height: 60px; margin: 10px auto 0px auto; overflow-x: hidden; overflow-y: hidden;
+}
+.zhiling-list
+{
+    overflow-x: hidden; overflow-y: hidden; width: 360px; height: 60px; overflow: -moz-scrollbars-none; -ms-overflow-style: none; scrollbar-width: none; font-size: 12px;
+}
+.zhiling-list::-webkit-scrollbar
+{
+    width: 0 !important
+}
+.zhiling-line-title
+{
+    background-color: #263237; font-size: 12px;
+}
+.zhiling-line
+{
+    display: flex; flex-wrap: wrap; width: 360px;
+}
+.zhiling-line-content
+{
+    -webkit-animation: 30s gundong linear infinite normal; animation: 30s gundong linear infinite normal;
+}
+.zhiling-line-0
+{
+    background-color: #112634;
+}
+.zhiling-line > p
+{
+    height: 24px; line-height: 24px; text-align: center;
+}
+
+/****** Scroll Animation ******/
+
+@keyframes gundong {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, -307px, 0);
+        transform: translate3d(0, -120px, 0);
+    }
+}

@@ -1,0 +1,1600 @@
+/*skin1*/
+body.skin1{
+	/* background:#043448; */
+}
+.skin1 .entranceBtn{
+	background:url(../images/skin2/openBigScreen01.png) no-repeat center center;
+}
+.skin1 .entranceBtn:hover{
+	background:url(../images/skin2/openBigScreen02.png) no-repeat center center;
+}
+/*header开始*/
+.skin1 .header{
+	background:url(../images/skin1/headerBg.png) no-repeat center center;
+	background-size:100% 100%;
+}
+
+.skin1 .systemName{
+	color:#535870;
+	background:url(../images/skin1/logo.png) no-repeat 28px center;
+}
+
+.skin1 .header .userName{
+	color:#24bdbf;
+	background:url(../images/skin1/iconUser1-52.png) no-repeat 28px 12px;
+}
+.skin1 .header .systemTime{
+	color:#24bdbf;
+}
+.skin1 .header .userOperate{
+	background:url(../images/skin1/showPop.png) no-repeat center 19px;
+}
+
+.skin1 .header .popGrid2{
+    background: url(../images/skin1/popBg2T.png) no-repeat 0 0;
+}
+.skin1 .header .popCent{
+	background: url(../images/skin1/popBg2C.png) repeat-y 0 0;
+}
+.skin1 .header .popGrid2 .popB{
+    background: url(../images/skin1/popBg2B.png) no-repeat 0 0;
+}
+.skin1 .header .popGrid2 li{
+	border-bottom:1px solid #fafafc
+}
+
+.skin1 .header .popGrid2 li:hover{
+	background:#fafafc;
+}
+.skin1 .header .popGrid2 ul span{
+    color: #84879d;
+}
+.skin1 .header .popGrid2 .skinChange{
+	border: 1px solid #263077;
+}
+.skin1 .header .popGrid2 .skinChange.selected{
+	border: 1px solid #25edcd;
+	background-color: #25edcd;
+}
+.skin1 .header .popGrid2 ul a{
+    color: #84879d;
+}
+
+.skin1 .header .popGrid2 .download{
+	background:url(../images/skin1/iconDownload.png) no-repeat 5px center;
+}
+.skin1 .header .popGrid2 .loginOut{
+	background:url(../images/skin1/iconLogout.png) no-repeat 28px center;
+}
+
+/*一级菜单切换按钮样式*/
+/* .skin1 .headerMenuToggle .toggleBtn{
+	background:#b8b8b5;
+}
+.skin1 .headerMenuToggle .toggleBtn:hover{
+	background:#5cb1f4;
+} */
+.skin1 .headerMenuToggle .upBtn{
+	background:url(../images/skin1/upBtn_hover.png) no-repeat 1px 0;
+}
+.skin1 .headerMenuToggle .upBtn.cannot{
+	background:url(../images/skin1/upBtn.png) no-repeat 1px 0;
+}
+.skin1 .headerMenuToggle .upBtn:hover{
+	background:url(../images/skin1/upBtn.png) no-repeat 1px 0;
+}
+.skin1 .headerMenuToggle .downBtn{
+	background:url(../images/skin1/downBtn_hover.png) no-repeat 3px 0;
+}
+.skin1 .headerMenuToggle .downBtn.cannot{
+	background:url(../images/skin1/downBtn.png) no-repeat 3px 0;
+}
+.skin1 .headerMenuToggle .downBtn:hover{
+	background:url(../images/skin1/downBtn.png) no-repeat 3px 0;
+}
+
+/*子菜单样式*/
+.skin1 .header .childMenu{
+	background:url(../images/skin1/lineMenu.png) no-repeat right center;
+	border-right:1px solid #053b47;
+}
+.skin1 .header .childMenu.selected{
+	background: url(../images/skin1/menuFir01.png) no-repeat center 0;
+	/* border-left:1px solid #053b47;  */
+	border-right:1px solid #053b47;
+}
+.skin1 .header .childMenu.selected a{color:#ffeb67;}
+.skin1 .header .childMenu a{color:#fff;}
+.skin1 .header .childMenu a:hover{color: #ffeb67;}
+
+/*icon01*/
+ .skin1 .childMenu.icon0 .icon{
+		background: url(../images/skin1/iconMenu08.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon0.selected .icon{
+		background: url(../images/skin1/iconMenu08_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin1 .childMenu.icon1 .icon{
+		background: url(../images/skin1/iconMenu07.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon1.selected .icon{
+		background: url(../images/skin1/iconMenu07_1.png) no-repeacenterenter center;
+	}
+/*icon03*/
+ .skin1 .childMenu.icon2 .icon{
+		background: url(../images/skin1/iconMenu06.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon2.selected .icon{
+		background: url(../images/skin1/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin1 .childMenu.icon3 .icon{
+		background: url(../images/skin1/iconMenu05.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon3.selected .icon{
+		background: url(../images/skin1/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin1 .childMenu.icon4 .icon{
+		background: url(../images/skin1/iconMenu04.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon4.selected .icon{
+		background: url(../images/skin1/iconMenu04_1.png) no-repeat center center;
+	}
+/*icon06*/
+ .skin1 .childMenu.icon5 .icon{
+		background: url(../images/skin1/iconMenu03.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon5.selected .icon{
+		background: url(../images/skin1/iconMenu03_1.png) no-repeat center center;
+	}
+/*icon07*/
+ .skin1 .childMenu.icon6 .icon{
+		background: url(../images/skin1/iconMenu02.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon6.selected .icon{
+		background: url(../images/skin1/iconMenu02_1.png) no-repeat center center;
+	}
+/*icon08*/
+ .skin1 .childMenu.icon7 .icon{
+		background: url(../images/skin1/iconMenu01.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon7.selected .icon{
+		background: url(../images/skin1/iconMenu01_1.png) no-repeat center center;
+	}
+/*icon01*/
+ .skin1 .childMenu.icon8 .icon{
+		background: url(../images/skin1/iconMenu09.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon8.selected .icon{
+		background: url(../images/skin1/iconMenu09_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin1 .childMenu.icon9 .icon{
+		background: url(../images/skin1/iconMenu10.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon9.selected .icon{
+		background: url(../images/skin1/iconMenu10_1.png) no-repeat center center;
+	}
+/*icon03*/
+ .skin1 .childMenu.icon10 .icon{
+		background: url(../images/skin1/iconMenu06.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon10.selected .icon{
+		background: url(../images/skin1/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin1 .childMenu.icon11 .icon{
+		background: url(../images/skin1/iconMenu05.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon11.selected .icon{
+		background: url(../images/skin1/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin1 .childMenu.icon12 .icon{
+		background: url(../images/skin1/iconMenu04.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon12.selected .icon{
+		background: url(../images/skin1/iconMenu04_1.png) no-repeat center center;
+	}
+/*icon06*/
+ .skin1 .childMenu.icon13 .icon{
+		background: url(../images/skin1/iconMenu03.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon13.selected .icon{
+		background: url(../images/skin1/iconMenu03_1.png) no-repeat center center;
+	}
+/*icon07*/
+ .skin1 .childMenu.icon14 .icon{
+		background: url(../images/skin1/iconMenu02.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon14.selected .icon{
+		background: url(../images/skin1/iconMenu02_1.png) no-repeat center center;
+	}
+/*icon08*/
+ .skin1 .childMenu.icon15 .icon{
+		background: url(../images/skin1/iconMenu01.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon15.selected .icon{
+		background: url(../images/skin1/iconMenu01_1.png) no-repeat center center;
+	}
+/*icon01*/
+ .skin1 .childMenu.icon16 .icon{
+		background: url(../images/skin1/iconMenu08.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon16.selected .icon{
+		background: url(../images/skin1/iconMenu08_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin1 .childMenu.icon17 .icon{
+		background: url(../images/skin1/iconMenu07.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon17.selected .icon{
+		background: url(../images/skin1/iconMenu07_1.png) no-repeat center center;
+	}
+/*icon03*/
+ .skin1 .childMenu.icon18 .icon{
+		background: url(../images/skin1/iconMenu06.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon18.selected .icon{
+		background: url(../images/skin1/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin1 .childMenu.icon19 .icon{
+		background: url(../images/skin1/iconMenu05.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon19.selected .icon{
+		background: url(../images/skin1/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin1 .childMenu.icon20 .icon{
+		background: url(../images/skin1/iconMenu04.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon20.selected .icon{
+		background: url(../images/skin1/iconMenu04_1.png) no-repeat center center;
+	}
+/*icon06*/
+ .skin1 .childMenu.icon21 .icon{
+		background: url(../images/skin1/iconMenu03.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon21.selected .icon{
+		background: url(../images/skin1/iconMenu03_1.png) no-repeat center center;
+	}
+/*icon07*/
+ .skin1 .childMenu.icon22 .icon{
+		background: url(../images/skin1/iconMenu02.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon22.selected .icon{
+		background: url(../images/skin1/iconMenu02_1.png) no-repeat center center;
+	}
+/*icon08*/
+ .skin1 .childMenu.icon23 .icon{
+		background: url(../images/skin1/iconMenu01.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon23.selected .icon{
+		background: url(../images/skin1/iconMenu01_1.png) no-repeat center center;
+	}
+
+ .skin1 .childMenu.icon24 .icon{
+		background: url(../images/skin1/iconMenu08.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon24.selected .icon{
+		background: url(../images/skin1/iconMenu08_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin1 .childMenu.icon25 .icon{
+		background: url(../images/skin1/iconMenu07.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon25.selected .icon{
+		background: url(../images/skin1/iconMenu07_1.png) no-repeat center center;
+	}
+/*icon03*/
+ .skin1 .childMenu.icon26 .icon{
+		background: url(../images/skin1/iconMenu06.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon26.selected .icon{
+		background: url(../images/skin1/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin1 .childMenu.icon27 .icon{
+		background: url(../images/skin1/iconMenu05.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon27.selected .icon{
+		background: url(../images/skin1/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin1 .childMenu.icon28 .icon{
+		background: url(../images/skin1/iconMenu04.png) no-repeat center center;
+	}
+ .skin1 .childMenu.icon28.selected .icon{
+		background: url(../images/skin1/iconMenu04_1.png) no-repeat center center;
+	}	
+/*增减tab背景色*/
+/* body.skin1{
+	background: url(../images/skin1/loginBg2.png) no-repeat center center;	
+} */
+.skin1 .menu_iframe .iframeTabBox{
+	background:#013c4c;
+}
+.skin1 .menu_iframe .iframeTabBox li{
+	background:#1a2328;
+	color:#4ddbdf;
+	border-right:1px solid #013c4c;
+}
+.skin1 .menu_iframe .iframeTabBox .tabName{
+	color:#4ddbdf;
+}
+.skin1 .menu_iframe .iframeTabBox li.selected{
+	background:#1a2328;
+	color:#4ddbdf;
+}
+.skin1 .menu_iframe .iframeTabBox li:hover .tabName{
+	color:#4ddbdf;
+}
+.skin1 .menu_iframe .iframeTabBox li:hover .tabClose{
+	background:url(../images/tabClose.png) no-repeat center center;
+}
+
+.skin1 .tabIframeChildBox .removeAll{
+	background:#0d5d72;
+}
+.skin1 .tabIframeChildBox .removeAll .relDiv .operateTitle{
+	background:#0d5d72;
+	color:#4ddbdf;
+}
+.skin1 .menu_iframe .iframeTabBox .removeAll ul{
+	background:#ebeef7;
+}
+.skin1 .menu_iframe .iframeTabBox .removeAll ul li{
+	color:#61a8ff;
+}
+.skin1 .menu_iframe .iframeTabBox .removeAll ul li:hover{
+	background:#17398e;
+}
+
+/*左侧菜单*/
+.skin1 .menu_iframe .menuBox{
+	background:#022229;
+}
+.skin1 .menu_iframe .menuBox .menuTitle span{
+	border-bottom:1px solid #136bc6;
+}
+.skin1 .menu_iframe .menuBox .menu2{
+	background:#1164ba;
+}
+.skin1 .menu_iframe .menuBox .menu2 li:hover{
+	background:#0d539b;
+}
+.skin1 .menu_iframe .menuBox ul li a{
+	color:#ffe770;
+}
+.skin1 .menu_iframe .menuBox ul li.selected{
+	background:#005159 url(../images/menuSele.png) no-repeat right center;
+}
+.skin1 .tabIframeChildBox .leftBtn{
+	height:100%;
+	width:35px;
+	left:0;
+	z-index:10;
+	cursor:pointer;
+	background:#fff url(../images/skin1/goL.png) no-repeat center center;
+}
+.skin1 .tabIframeChildBox .leftBtn:hover{
+	background:#fff url(../images/skin1/goL1.png) no-repeat center center;
+}
+.skin1 .tabIframeChildBox .rightBtn{
+	height:100%;
+	width:35px;
+	right:113px;
+	z-index:10;
+	cursor:pointer;
+	background:#fff url(../images/skin1/goR.png) no-repeat center center;
+}
+.skin1 .tabIframeChildBox .rightBtn:hover{
+	background:#fff url(../images/skin1/goR1.png) no-repeat center center;
+}
+
+.skin1 .mapFloatPart .module .titleBox .tab{
+	color:#00fcff;
+	background:url(../images/skin1/moduleTabBg.png) no-repeat center center;
+	background-size:100% 100%;
+	width:93px;
+}
+.skin1 .mapFloatPart .module .titleBox .tab.selected{
+	background:url(../images/skin1/moduleTabBgSelected.png) no-repeat center center;
+	background-size:100% 100%;
+	color:#fff;
+}
+.skin1 .mapFloatPart .module .titleBox .tab1{
+	background:url(../images/skin1/moduleTabBgFirst.png) no-repeat left center;
+	left:0;
+	width:99px;
+}
+.skin1 .mapFloatPart .module .titleBox .tab1.selected{
+	background:url(../images/skin1/moduleTabBgFirstSelected.png) no-repeat left center;
+	color:#fff;
+}
+.skin1 .mapFloatPart .module .titleBox .tab2{
+	left:87px;
+}
+.skin1 .mapFloatPart .module .titleBox .tab3{
+	left:169px;
+}
+
+
+/*日历皮肤开始*/
+.skin1 .WdateDiv{
+	background-color:#009aa7;
+}
+
+
+/*日历皮肤结束*/
+
+/*综合情况开始*/
+.skin1 .comprehensiveSituationPart .lists p{
+	color:#00ffea;
+}
+.skin1 .comprehensiveSituationPart .type{
+	color:#ffdd67;
+}
+
+.skin1 .comprehensiveSituationPart .tq{
+	background:url(../images/skin1/comprehensiveSituation01.png) no-repeat 5px 5px;
+}
+.skin1 .comprehensiveSituationPart .sg1{
+	background:url(../images/skin1/comprehensiveSituation02.png) no-repeat 9px 5px;
+}
+.skin1 .comprehensiveSituationPart .sg2{
+	background:url(../images/skin1/comprehensiveSituation03.png) no-repeat 10px 5px;
+}
+.skin1 .comprehensiveSituationPart .yd{
+	background:url(../images/skin1/comprehensiveSituation04.png) no-repeat 8px 5px;
+}
+.skin1 .comprehensiveSituationPart .gz{
+	background:url(../images/skin1/comprehensiveSituation05.png) no-repeat 7px 5px;
+}
+/*综合情况结束*/
+/*谷歌滚动条*/
+.skin1 .selfScrollBar{
+	/*overflow-x:hidden;*/
+	overflow-y:auto;
+}
+.skin1 .selfScrollBar::-webkit-scrollbar              { width:10px;height:10px;}
+.skin1 .selfScrollBar::-webkit-scrollbar-button       {background-color:#0c303e;}
+.skin1 .selfScrollBar::-webkit-scrollbar-track        {background:red; }
+.skin1 .selfScrollBar::-webkit-scrollbar-track-piece  { background:#0099a3; }
+.skin1 .selfScrollBar::-webkit-scrollbar-thumb        { background:#000b0f; border-radius:4px; }
+.skin1 .selfScrollBar::-webkit-scrollbar-corner       { background:#82AFFF; }
+.skin1 .selfScrollBar::-webkit-resizer                { background:#FF0BEE; }
+/*IE滚动条*/
+.skin1 .selfScrollBar{
+	/* 滚动条颜色 */
+	scrollbar-3dlight-color:#0c303e;
+	/* 滚动条按钮颜色 */
+	scrollbar-highlight-color:#0c303e;
+	/* 鼠标悬停时按钮颜色 */
+
+	scrollbar-face-color:#91c5fc;
+	/* 隐藏上下箭头 */
+	scrollbar-arrow-color:#0c303e;
+	/* 纵向滚动条宽度 */
+	scrollbar-shadow-color:#fff;
+	scrollbar-dark-shadow-color:#0c303e;
+	scrollbar-base-color:#0c303e;
+	scrollbar-track-color:#cde9f7;
+}
+
+
+
+
+/*河北高速工具栏开始*/
+/*.skin1 .newToolBarPart .toolBarbg{
+	background:url(../images/skin1/hbToolbarBg.png);
+	border:1px solid #03366b;
+}
+.skin1 .newToolBarPart .toggleBtn .icon{
+	background:url(../images/skin1/hbToolbar01.png) no-repeat center center;
+}
+ .skin1 .newToolBarPart .toggleBtn .icon:hover{
+	background:url(../images/skin1/hbToolbar01a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .lrBtn .icon{
+	background:url(../images/skin1/hbToolbar07.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .lrBtn .icon.selected{
+	background:url(../images/skin1/hbToolbar07a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .lrBtn .icon:hover{
+	background:url(../images/skin1/hbToolbar07a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .searchBtn .icon{
+	background:url(../images/skin1/hbToolbar06.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .searchBtn .icon.selected{
+	background:url(../images/skin1/hbToolbar06a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .searchBtn .icon:hover{
+	background:url(../images/skin1/hbToolbar06a.png) no-repeat center center;
+}
+
+
+.skin1 .newToolBarPart .tool ul.listBox .icon03{
+	background:url(../images/skin1/hbToolbar05.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon03.selected{
+	background:url(../images/skin1/hbToolbar05a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon03:hover{
+	background:url(../images/skin1/hbToolbar05a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon04{
+	background:url(../images/skin1/hbToolbar04.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon04.selected{
+	background:url(../images/skin1/hbToolbar04a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon04:hover{
+	background:url(../images/skin1/hbToolbar04a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon05{
+	background:url(../images/skin1/hbToolbar03.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon05.selected{
+	background:url(../images/skin1/hbToolbar03a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon05:hover{
+	background:url(../images/skin1/hbToolbar03a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon06{
+	background:url(../images/skin1/hbToolbar02.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon06.selected{
+	background:url(../images/skin1/hbToolbar02a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon06:hover{
+	background:url(../images/skin1/hbToolbar02a.png) no-repeat center center;
+} */
+
+
+/*图层二级菜单开始*/
+/* .skin1 .newToolBarPart .tool ul.listBox .layerLists{
+	border:1px solid #03366b;
+	background:none;
+	background:url(../images/skin1/layerBg.png);
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd{
+	border-bottom:1px solid #233841;
+	color:#fff;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd:last-child{
+	border:none;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd:hover{
+	background:url(../images/skin1/layerLineBg.png);
+}
+.skin1 .newToolBarPart .tool ul.listBox .sjx{
+	background:url(../images/skin1/hbToolbarBg3.png) no-repeat center center;
+}
+
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons01{
+	background:url(../images/skin1/hbToolbar08.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons02{
+	background:url(../images/skin1/hbToolbar09.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons03{
+	background:url(../images/skin1/hbToolbar10.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons04{
+	background:url(../images/skin1/hbToolbar11.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons05{
+	background:url(../images/skin1/hbToolbar12.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons06{
+	background:url(../images/skin1/hbToolbar13.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons07{
+	background:url(../images/skin1/hbToolbar14.png) no-repeat 6px center;
+} */
+
+
+/*图层二级菜单结束*/
+
+
+/*河北高速工具栏结束*/
+
+
+/*河北高速工具栏开始*/
+.skin1 .newToolBarPart .toolBarbg{
+	background:url(../images/skin1/hbToolbarBg.png);
+	border:1px solid #03366b;
+}
+.skin1 .newToolBarPart .toggleBtn .icon{
+	background:url(../images/skin1/hbToolbar01.png) no-repeat center center;
+}
+/* .skin1 .newToolBarPart .toggleBtn .icon.selected{
+	background:url(../images/skin1/hbToolbar01a.png) no-repeat center center;
+} */
+.skin1 .newToolBarPart .toggleBtn .icon:hover{
+	background:url(../images/skin1/hbToolbar01a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .lrBtn .icon{
+	background:url(../images/skin1/hbToolbar07.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .lrBtn .icon.selected{
+	background:url(../images/skin1/hbToolbar07a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .lrBtn .icon:hover{
+	background:url(../images/skin1/hbToolbar07a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .searchBtn .icon{
+	background:url(../images/skin1/hbToolbar06.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .searchBtn .icon.selected{
+	background:url(../images/skin1/hbToolbar06a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .searchBtn .icon:hover{
+	background:url(../images/skin1/hbToolbar06a.png) no-repeat center center;
+}
+
+
+.skin1 .newToolBarPart .tool ul.listBox .icon03{
+	background:url(../images/skin1/hbToolbar05.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon03.selected{
+	background:url(../images/skin1/hbToolbar05a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon03:hover{
+	background:url(../images/skin1/hbToolbar05a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon04{
+	background:url(../images/skin1/hbToolbar04.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon04.selected{
+	background:url(../images/skin1/hbToolbar04a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon04:hover{
+	background:url(../images/skin1/hbToolbar04a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon05{
+	background:url(../images/skin1/hbToolbar03.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon05.selected{
+	background:url(../images/skin1/hbToolbar03a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon05:hover{
+	background:url(../images/skin1/hbToolbar03a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon06{
+	background:url(../images/skin1/hbToolbar02.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon06.selected{
+	background:url(../images/skin1/hbToolbar02a.png) no-repeat center center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .icon06:hover{
+	background:url(../images/skin1/hbToolbar02a.png) no-repeat center center;
+}
+
+
+/*图层二级菜单开始*/
+.skin1 .newToolBarPart .tool ul.listBox .layerLists{
+	border:1px solid #03366b;
+	background:none;
+	background:url(../images/skin1/layerBg.png);
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd{
+	border-bottom:1px solid #233841;
+	color:#fff;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd:last-child{
+	border:none;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd:hover{
+	background:url(../images/skin1/layerLineBg.png);
+}
+.skin1 .newToolBarPart .tool ul.listBox .sjx{
+	background:url(../images/skin1/hbToolbarBg3.png) no-repeat center center;
+}
+
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons01{
+	background:url(../images/skin1/hbToolbar08.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons02{
+	background:url(../images/skin1/hbToolbar09.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons03{
+	background:url(../images/skin1/hbToolbar10.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons04{
+	background:url(../images/skin1/hbToolbar11.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons05{
+	background:url(../images/skin1/hbToolbar12.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons06{
+	background:url(../images/skin1/hbToolbar13.png) no-repeat 6px center;
+}
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons07{
+	background:url(../images/skin1/hbToolbar14.png) no-repeat 6px center;
+}
+
+.skin1 .newToolBarPart .tool ul.listBox .layerLists dd .icons08{
+	background:url(../images/skin1/hbToolbarSp.png) no-repeat 6px center;
+}
+
+
+/*图层二级菜单结束*/
+
+
+/*河北高速工具栏结束*/
+
+/*skin2*/
+
+/*header*/
+.skin2 .header{
+	background:#fff;
+}
+.skin2 .entranceBtn{
+	background:url(../images/skin2/openBigScreen01.png) no-repeat center center;
+}
+.skin2 .entranceBtn:hover{
+	background:url(../images/skin2/openBigScreen02.png) no-repeat center center;
+}
+.skin2 .systemName{
+	color:#c3e5ff;
+	background:url(../images/skin2/logo.png) no-repeat 12px center;
+}
+
+.skin2 .header .user{
+	background:url(../images/skin2/lineMenu.gif) no-repeat right center;
+}
+.skin2 .header .userName{
+	color:#666666;
+	background:url(../images/skin2/iconUser1-52.png) no-repeat 6px 12px;
+}
+.skin2 .header .systemTime{
+	color:#666666;
+}
+
+
+.skin2 .header .popGrid2{
+    background: url(../images/skin2/popBg2T.png) no-repeat 0 0;
+}
+.skin2 .header .popCent{
+	background: url(../images/skin2/popBg2C.png) repeat-y 0 0;
+}
+.skin2 .header .popGrid2 .popB{
+    background: url(../images/skin2/popBg2B.png) no-repeat 0 0;
+}
+.skin2 .header .popGrid2 li{
+	border-bottom: 1px solid #3862c4;
+}
+.skin2 .header .popGrid2 li:hover{
+	background:#2f64c1;
+}
+.skin2 .header .popGrid2 li:hover a{
+color:#06152c
+}
+.skin2 .header .popGrid2 ul span{
+    color: #61a8ff;
+}
+.skin2 .header .popGrid2 .skinChange{
+	border: 1px solid #25edcd
+}
+.skin2 .header .popGrid2 .skinChange.selected{
+	border: 1px solid #25edcd;
+	    background-color: #61a8ff;
+}
+.skin2 .header .popGrid2 ul a{
+    color: #61a8ff;
+}
+.skin2 .header .popGrid2 .download{
+	background:url(../images/skin2/iconDownload.png) no-repeat 5px center;
+}
+.skin2 .header .popGrid2 .loginOut{
+	background:url(../images/skin2/iconLogout.png) no-repeat 28px center;
+}
+.skin2 .header .popGrid2  li:hover .download{
+	background:url(../images/skin2/iconDownload0.png) no-repeat 5px center;
+}
+.skin2 .header .popGrid2  li:hover .loginOut{
+	background:url(../images/skin2/iconLogout0.png) no-repeat 28px center;
+}
+/*一级菜单切换按钮样式*/
+/* .skin2 .headerMenuToggle .toggleBtn{
+	background:#80b8fc;
+}
+.skin2 .headerMenuToggle .toggleBtn:hover{
+	background:#61a8ff;
+} */
+.skin2 .headerMenuToggle .upBtn{
+	background:url(../images/skin2/upBtn_hover.png) no-repeat 1px 0;
+}
+.skin2 .headerMenuToggle .upBtn.cannot{
+	background:url(../images/skin2/upBtn.png) no-repeat 1px 0;
+}
+.skin2 .headerMenuToggle .upBtn:hover{
+	background:url(../images/skin2/upBtn.png) no-repeat 1px 0;
+}
+.skin2 .headerMenuToggle .downBtn{
+	background:url(../images/skin2/downBtn_hover.png) no-repeat 3px 0;
+}
+.skin2 .headerMenuToggle .downBtn.cannot{
+	background:url(../images/skin2/downBtn.png) no-repeat 3px 0;
+}
+.skin2 .headerMenuToggle .downBtn:hover{
+	background:url(../images/skin2/downBtn.png) no-repeat 3px 0;
+}
+/*子菜单样式*/
+.skin2 .header .childMenu{
+	background:url(../images/skin2/lineMenu.gif) no-repeat right center;
+}
+.skin2 .header .childMenu.selected{
+	/* background: url(../images/skin2/menuFir01.gif) no-repeat right bottom; */
+}
+.skin2 .header .childMenu.selected a{color:#666666;font-weight:bold;}
+.skin2 .header .childMenu a{color:#666666;}
+.skin2 .header .childMenu a:hover{color: #666666;}
+
+
+/*icon01*/
+ .skin2 .childMenu.icon0 .icon{
+		background: url(../images/skin2/iconMenu08.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon0.selected .icon{
+		background: url(../images/skin2/iconMenu08_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin2 .childMenu.icon1 .icon{
+		background: url(../images/skin2/iconMenu07.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon1.selected .icon{
+		background: url(../images/skin2/iconMenu07_1.png) no-repeat center center;
+	}
+/*icon03*/
+ .skin2 .childMenu.icon2 .icon{
+		background: url(../images/skin2/iconMenu06.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon2.selected .icon{
+		background: url(../images/skin2/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin2 .childMenu.icon3 .icon{
+		background: url(../images/skin2/iconMenu05.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon3.selected .icon{
+		background: url(../images/skin2/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin2 .childMenu.icon4 .icon{
+		background: url(../images/skin2/iconMenu04.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon4.selected .icon{
+		background: url(../images/skin2/iconMenu04_1.png) no-repeat center center;
+	}
+/*icon06*/
+ .skin2 .childMenu.icon5 .icon{
+		background: url(../images/skin2/iconMenu03.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon5.selected .icon{
+		background: url(../images/skin2/iconMenu03_1.png) no-repeat center center;
+	}
+/*icon07*/
+ .skin2 .childMenu.icon6 .icon{
+		background: url(../images/skin2/iconMenu02.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon6.selected .icon{
+		background: url(../images/skin2/iconMenu02_1.png) no-repeat center center;
+	}
+/*icon08*/
+ .skin2 .childMenu.icon7 .icon{
+		background: url(../images/skin2/iconMenu01.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon7.selected .icon{
+		background: url(../images/skin2/iconMenu01_1.png) no-repeat center center;
+	}
+/*icon01*/
+ .skin2 .childMenu.icon8 .icon{
+		background: url(../images/skin2/iconMenu09.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon8.selected .icon{
+		background: url(../images/skin2/iconMenu09_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin2 .childMenu.icon9 .icon{
+		background: url(../images/skin2/iconMenu10.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon9.selected .icon{
+		background: url(../images/skin2/iconMenu10_1.png) no-repeat center center;
+	}
+/*icon03*/
+ .skin2 .childMenu.icon10 .icon{
+		background: url(../images/skin2/iconMenu06.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon10.selected .icon{
+		background: url(../images/skin2/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin2 .childMenu.icon11 .icon{
+		background: url(../images/skin2/iconMenu05.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon11.selected .icon{
+		background: url(../images/skin2/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin2 .childMenu.icon12 .icon{
+		background: url(../images/skin2/iconMenu04.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon12.selected .icon{
+		background: url(../images/skin2/iconMenu04_1.png) no-repeat center center;
+	}
+/*icon06*/
+ .skin2 .childMenu.icon13 .icon{
+		background: url(../images/skin2/iconMenu03.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon13.selected .icon{
+		background: url(../images/skin2/iconMenu03_1.png) no-repeat center center;
+	}
+/*icon07*/
+ .skin2 .childMenu.icon14 .icon{
+		background: url(../images/skin2/iconMenu02.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon14.selected .icon{
+		background: url(../images/skin2/iconMenu02_1.png) no-repeat center center;
+	}
+/*icon08*/
+ .skin2 .childMenu.icon15 .icon{
+		background: url(../images/skin2/iconMenu01.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon15.selected .icon{
+		background: url(../images/skin2/iconMenu01_1.png) no-repeat center center;
+	}
+/*icon01*/
+ .skin2 .childMenu.icon16 .icon{
+		background: url(../images/skin2/iconMenu08.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon16.selected .icon{
+		background: url(../images/skin2/iconMenu08_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin2 .childMenu.icon17 .icon{
+		background: url(../images/skin2/iconMenu07.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon17.selected .icon{
+		background: url(../images/skin2/iconMenu07_1.png) no-repeat center center;
+	}
+/*icon03*/
+ .skin2 .childMenu.icon18 .icon{
+		background: url(../images/skin2/iconMenu06.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon18.selected .icon{
+		background: url(../images/skin2/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin2 .childMenu.icon19 .icon{
+		background: url(../images/skin2/iconMenu05.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon19.selected .icon{
+		background: url(../images/skin2/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin2 .childMenu.icon20 .icon{
+		background: url(../images/skin2/iconMenu04.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon20.selected .icon{
+		background: url(../images/skin2/iconMenu04_1.png) no-repeat center center;
+	}
+/*icon06*/
+ .skin2 .childMenu.icon21 .icon{
+		background: url(../images/skin2/iconMenu03.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon21.selected .icon{
+		background: url(../images/skin2/iconMenu03_1.png) no-repeat center center;
+	}
+/*icon07*/
+ .skin2 .childMenu.icon22 .icon{
+		background: url(../images/skin2/iconMenu02.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon22.selected .icon{
+		background: url(../images/skin2/iconMenu02_1.png) no-repeat center center;
+	}
+/*icon08*/
+ .skin2 .childMenu.icon23 .icon{
+		background: url(../images/skin2/iconMenu01.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon23.selected .icon{
+		background: url(../images/skin2/iconMenu01_1.png) no-repeat center center;
+	}
+
+ .skin2 .childMenu.icon24 .icon{
+		background: url(../images/skin2/iconMenu08.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon24.selected .icon{
+		background: url(../images/skin2/iconMenu08_1.png) no-repeat center center;
+	}
+/*icon02*/
+ .skin2 .childMenu.icon25 .icon{
+		background: url(../images/skin2/iconMenu07.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon25.selected .icon{
+		background: url(../images/skin2/iconMenu07_1.png) no-repeat center center;
+	}
+/*icon03*/
+ .skin2 .childMenu.icon26 .icon{
+		background: url(../images/skin2/iconMenu06.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon26.selected .icon{
+		background: url(../images/skin2/iconMenu06_1.png) no-repeat center center;
+	}
+/*icon04*/
+ .skin2 .childMenu.icon27 .icon{
+		background: url(../images/skin2/iconMenu05.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon27.selected .icon{
+		background: url(../images/skin2/iconMenu05_1.png) no-repeat center center;
+	}
+/*icon05*/
+ .skin2 .childMenu.icon28 .icon{
+		background: url(../images/skin2/iconMenu04.png) no-repeat center center;
+	}
+ .skin2 .childMenu.icon28.selected .icon{
+		background: url(../images/skin2/iconMenu04_1.png) no-repeat center center;
+	}
+	
+/*增减tab背景色*/
+/* body.skin2{
+	background: url(../images/skin2/loginBg2.png) no-repeat center center;	
+} */
+.skin2 .menu_iframe .iframeTabBox li{
+	background:none;
+	border-right:1px solid #1b3e97;
+}
+.skin2 .menu_iframe .iframeTabBox .tabName{
+	color:#b8d8ff;
+}
+.skin2 .menu_iframe .iframeTabBox li.selected{
+	background:#05103f;
+}
+.skin2 .menu_iframe .iframeTabBox li.selected .tabName{
+	color:#ffe770;
+}
+.skin2 .menu_iframe .iframeTabBox li:hover .tabName{
+	color:#ffe770;
+}
+.skin2 .menu_iframe .iframeTabBox li:hover .tabClose{
+	background:url(../images/tabClose.png) no-repeat center center;
+}
+
+.skin2 .tabIframeChildBox .removeAll{
+	background:#1b3e97 url(../images/skin2/operateTitle.png) no-repeat 92px center;
+}
+.skin2 .tabIframeChildBox .removeAll .relDiv .operateTitle{
+	background:url(../images/skin2/removeAllHand.png) no-repeat 20px 9px;
+	color:#61a8ff;
+}
+.skin2 .menu_iframe .iframeTabBox .removeAll ul{
+	background:#1b3e97;
+}
+.skin2 .menu_iframe .iframeTabBox .removeAll ul li{
+	color:#61a8ff;
+}
+.skin2 .menu_iframe .iframeTabBox .removeAll ul li:hover{
+	background:#17398e;
+}
+
+
+/*左侧菜单*/
+.skin2 .menu_iframe .menuBox{
+	background:#35384b;
+}
+.skin2 .menu_iframe .iframeTabBox{
+	background:#062373;
+}
+.skin2 .menu_iframe .menuBox .menuTitle span{
+	border-bottom:1px solid #2e2f40;
+}
+.skin2 .menu_iframe .menuBox .menuTitle.selected span{
+	color:#ffe770;
+}
+.skin2 .menu_iframe .menuBox .menu2{
+	background:#2e2f40;
+}
+.skin2 .menu_iframe .menuBox .menu2 li:hover{
+	background:#1d1e2d;
+}
+
+.skin2 .menu_iframe .menuBox ul li.selected{
+	background:#1d1e2d url(../images/menuSele.png) no-repeat right center;
+}
+.skin2 .menu_iframe .menuBox ul li a{
+	background:url(../images/skin2/mavenPoint02.png) no-repeat left center;
+}
+.skin2 .menu_iframe .menuBox ul li.selected a{
+	color:#ffe770;
+	background:url(../images/skin2/mavenPoint01.png) no-repeat left center;
+}
+
+.skin2 .tabIframeChildBox .leftBtn{
+	height:100%;
+	width:35px;
+	left:0;
+	z-index:10;
+	cursor:pointer;
+	background:#062373 url(../images/skin2/goL.png) no-repeat center center;
+}
+.skin2 .tabIframeChildBox .leftBtn:hover{
+	background:#062373 url(../images/skin2/goL1.png) no-repeat center center;
+}
+.skin2 .tabIframeChildBox .rightBtn{
+	height:100%;
+	width:35px;
+	right:113px;
+	z-index:10;
+	cursor:pointer;
+	background:#062373 url(../images/skin2/goR.png) no-repeat center center;
+}
+.skin2 .tabIframeChildBox .rightBtn:hover{
+	background:#062373 url(../images/skin2/goR1.png) no-repeat center center;
+}
+
+
+.skin2 .mapFloatPart .module .titleBox .tab{
+	color:#666666;
+	background:#f6f6f6;
+	width:100px;
+}
+.skin2 .mapFloatPart .module .titleBox .tab.selected{
+	background:#7bbbfe;
+	color:#fff;
+}
+.skin2 .mapFloatPart .module .titleBox .tab1{
+	left:2px;
+}
+.skin2 .mapFloatPart .module .titleBox .tab2{
+	left:104px;
+}
+.skin2 .mapFloatPart .module .titleBox .tab3{
+	left:206px;
+}
+
+
+/*浮动模块皮肤开始*/
+.skin2 .container .left-box{
+	background:#fff;
+}
+
+.skin2 .container .right-box{
+	background:#fff;
+}
+.skin2 .mapFloatPart .module{
+	border:1px solid #d5d5d5;
+}
+.skin2 .mapFloatPart .module .tabContent.tabContent1{
+	background:none;
+}
+.skin2 .mapFloatPart .module .tabContent.tabContent2{
+	background:none;
+}
+.skin2 .mapFloatPart .module .tabContent.tabContent3{
+	background:none;
+}
+
+/*模块tab开始*/
+.skin2 .tabBox_btnBox li{
+	background:#b0d6fe;
+	color:#fff;
+}
+.skin2 .tabBox_btnBox li.selected{
+	background:#7bbbfe;
+}
+.skin2 .tabBox_btnBox .publish{
+	background:#7bbbfe;
+	color:#fff;
+}
+
+/*模块tab结束*/
+.skin2 .beforeDataCreateSpan .blue{
+	color:#429eff;
+	background:none;
+}
+.skin2 .beforeDataCreateSpan .yellow{
+	color:#ffad42;
+	background:none;
+}
+.skin2 .beforeDataCreateSpan .green{
+	color:#3bc542;
+	background:none;
+}
+.skin2 .beforeDataCreateSpan .red{
+	color:#ff6060;
+	background:none;
+}
+.skin2 .beforeDataCreateSpan .white{
+	color:#ff6060;
+	background:none;
+}
+.skin2 .beforeDataCreateSpan th{
+	color:#666666;
+}
+/*浮动模块皮肤结束*/
+
+
+/*任务情况开始*/
+.skin2 .beforeDataCreateSpan label{
+	color:#666666;
+}
+.skin2 .jwrwPart .message{
+	color:#666666;
+}
+/*任务情况结束*/
+
+
+/*警情趋势开始*/
+.skin2 .realTimeAlarmPart .totalData{
+	color:#666666;
+}
+.skin2 .realTimeAlarmPart .tabBox .selectBox{
+	color:#666;
+}
+.skin2 .realTimeAlarmPart .selectValue{
+	background-color:#f5f5f5;
+}
+.skin2 .realTimeAlarmPart .tabBox .select{
+	border:1px solid #dddddd;
+	box-sizing:border-box;
+}
+.skin2 .realTimeAlarmPart .tabBoxUl li.selected{
+	background:#7bbbfe;
+}
+.skin2 .realTimeAlarmPart .tabBoxUl li{
+	background:#b0d6fe;
+	color:#fff;
+}
+.skin2 .realTimeAlarmPart .selectBox ul{
+	background:#fff;
+}
+.skin2 .realTimeAlarmPart .selectBox .icon{
+	color:#666;
+}
+.skin2 .realTimeAlarmPart .selectBox li:hover{
+	background:#d0ebff;
+}
+.skin2 .realTimeAlarmPart .selectBox li.selected{
+	background:#d0ebff;
+}
+.skin2 .realTimeAlarmPart .sjx{
+	background:url(../images/skin2/realTimeAlarmPart01.png) no-repeat center top;
+}
+.skin2 .realTimeAlarmPart .selectBox ul{
+	border:1px solid #f1f1f1;
+}
+/*警情趋势结束*/
+
+/*拥堵概况开始*/
+.skin2 .congestionSituationPart .tableTitle th{
+	background:#f3f3f3;
+	border:1px solid #dedede;
+}
+.skin2 .congestionSituationPart td.positionIcon{
+	background:url(../images/skin2/positionIcon.png) no-repeat 5px 5px;
+}
+.skin2 .congestionSituationPart table tr:nth-child(odd){
+	background:#f3f3f3;
+}
+.skin2 .congestionSituationPart td{
+	color:#666;
+}
+/*拥堵概况结束*/
+
+
+/*辖区警力开始*/
+.skin2 .areaPoliceForcePart .actual{
+	color:#429eff;
+}
+.skin2 .areaPoliceForcePart .expect{
+	color:#999999;
+}
+.skin2 .areaPoliceForcePart .totalData{
+	color:#999;
+	background:url(../images/skin2/areaPoliceForcePartIcon01.png) no-repeat 11px center;
+}
+
+/*辖区警力结束*/
+
+/*综合情况开始*/
+.skin2 .comprehensiveSituationPart .lists p{
+	color:#666;
+}
+.skin2 .comprehensiveSituationPart .type{
+	color:#ff6060;
+}
+
+.skin2 .comprehensiveSituationPart .tq{
+	background:url(../images/skin2/comprehensiveSituation01.png) no-repeat 5px 5px;
+}
+.skin2 .comprehensiveSituationPart .sg1{
+	background:url(../images/skin2/comprehensiveSituation02.png) no-repeat 9px 5px;
+}
+.skin2 .comprehensiveSituationPart .sg2{
+	background:url(../images/skin2/comprehensiveSituation03.png) no-repeat 10px 5px;
+}
+.skin2 .comprehensiveSituationPart .yd{
+	background:url(../images/skin2/comprehensiveSituation04.png) no-repeat 8px 5px;
+}
+.skin2 .comprehensiveSituationPart .gz{
+	background:url(../images/skin2/comprehensiveSituation05.png) no-repeat 7px 5px;
+}
+/*综合情况结束*/
+
+/*今日任务开始*/
+.skin2 .jrrwListPart li p{
+	color:#666666;
+}
+.skin2 .jrrwListPart li p .team{
+	color:#ff3d3d;
+}
+.skin2 .jrrwListPart li.received .team {
+    color:#666666;
+}
+.skin2 .jrrwListPart .receive{
+	background:#7bbbfe;
+	color:#fff;
+}
+.skin2 .jrrwListPart li.received .receive{
+	color:#fff;
+	background:#cccccc;
+}
+/*今日任务结束*/
+
+/*流量开始*/
+.skin2 .surroundBJFlowPart  td{
+	color:#666666;
+}
+.skin2 .surroundBJFlowPart table tr:nth-child(odd){
+	background:#f3f3f3;
+}
+
+/*流量结束*/
+
+
+/*谷歌滚动条*/
+.skin2 .selfScrollBar{
+	/*overflow-x:hidden;*/
+	overflow-y:auto;
+}
+.skin2 .selfScrollBar::-webkit-scrollbar              { width:10px;height:10px;}
+.skin2 .selfScrollBar::-webkit-scrollbar-button       {background-color:#67adf6; }
+.skin2 .selfScrollBar::-webkit-scrollbar-track        {background:red; }
+.skin2 .selfScrollBar::-webkit-scrollbar-track-piece  { background:#b5def2; }
+.skin2 .selfScrollBar::-webkit-scrollbar-thumb        { background:#91c5fc; border-radius:4px; }
+.skin2 .selfScrollBar::-webkit-scrollbar-corner       { background:#82AFFF; }
+.skin2 .selfScrollBar::-webkit-resizer                { background:#FF0BEE; }
+/*IE滚动条*/
+.skin2 .selfScrollBar{
+	/* 滚动条颜色 */
+	scrollbar-3dlight-color:#328eee;
+	/* 滚动条按钮颜色 */
+	scrollbar-highlight-color:#559fed;
+	/* 鼠标悬停时按钮颜色 */
+
+	scrollbar-face-color:#91c5fc;
+	/* 隐藏上下箭头 */
+	scrollbar-arrow-color:#2685e8;
+	/* 纵向滚动条宽度 */
+	scrollbar-shadow-color:#fff;
+	scrollbar-dark-shadow-color:#559fed;
+	scrollbar-base-color:;
+	scrollbar-track-color:#cde9f7;
+}
+
+/*辖区警情开始*/
+.skin2 .jurisdictionInTheDistrictPart .tabBoxUl li{
+	background:#b0d6fe;
+	color:#fff;
+}
+.skin2 .jurisdictionInTheDistrictPart .tabBoxUl li.selected{
+	background:#7bbbfe;
+	color:#fff;
+}
+.skin2 .jurisdictionInTheDistrictPart .tabBox .selectBox{
+	color:#666666;
+}
+.skin2 .jurisdictionInTheDistrictPart .selectValue{
+	background-color:#f5f5f5;
+}
+/*辖区警情结束*/
+
+/*时段警情开始*/
+.skin2 .timeIntervalAlarmPart .tabBox .selectBox{
+	color:#666666;
+}
+.skin2 .timeIntervalAlarmPart .selectValue{
+	background-color:#f5f5f5;
+}
+/*时段警情结束*/
+
+/*指令平台开始*/
+.skin2 .zlptPart .zlptTabContent .message{
+	color:#666;
+}
+.skin2 .zlptPart .time{
+	color:#ff8400;
+}
+.skin2 .zlptPart .zlptTabContent .detailHref{
+	color:#666;
+}
+.skin2 .tabBox_btnBox{
+	border-bottom:1px solid #dddddd;
+}
+.skin2 .zlptPart .zlptTabContent{
+	background:url(../images/skin2/zlptPartBg.png) no-repeat 6px top;
+}
+/*指令平台结束*/
+
+
+/*河北高速工具栏开始*/
+.skin2 .newToolBarPart .toolBarbg{
+	background:#fff;
+	border:1px solid #e5e6e8;
+}
+.skin2 .newToolBarPart .toggleBtn .icon{
+	background:url(../images/skin2/hbToolbar01.png) no-repeat center center;
+}
+/* .skin2 .newToolBarPart .toggleBtn .icon.selected{
+	background:url(../images/skin2/hbToolbar01a.png) no-repeat center center;
+} */
+.skin2 .newToolBarPart .toggleBtn .icon:hover{
+	background:url(../images/skin2/hbToolbar01a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .lrBtn .icon{
+	background:url(../images/skin2/hbToolbar07.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .lrBtn .icon.selected{
+	background:url(../images/skin2/hbToolbar07a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .lrBtn .icon:hover{
+	background:url(../images/skin2/hbToolbar07a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .searchBtn .icon{
+	background:url(../images/skin2/hbToolbar06.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .searchBtn .icon.selected{
+	background:url(../images/skin2/hbToolbar06a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .searchBtn .icon:hover{
+	background:url(../images/skin2/hbToolbar06a.png) no-repeat center center;
+}
+
+
+.skin2 .newToolBarPart .tool ul.listBox .icon03{
+	background:url(../images/skin2/hbToolbar05.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon03.selected{
+	background:url(../images/skin2/hbToolbar05a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon03:hover{
+	background:url(../images/skin2/hbToolbar05a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon04{
+	background:url(../images/skin2/hbToolbar04.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon04.selected{
+	background:url(../images/skin2/hbToolbar04a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon04:hover{
+	background:url(../images/skin2/hbToolbar04a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon05{
+	background:url(../images/skin2/hbToolbar03.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon05.selected{
+	background:url(../images/skin2/hbToolbar03a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon05:hover{
+	background:url(../images/skin2/hbToolbar03a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon06{
+	background:url(../images/skin2/hbToolbar02.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon06.selected{
+	background:url(../images/skin2/hbToolbar02a.png) no-repeat center center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .icon06:hover{
+	background:url(../images/skin2/hbToolbar02a.png) no-repeat center center;
+}
+
+
+/*图层二级菜单开始*/
+.skin2 .newToolBarPart .tool ul.listBox .layerLists{
+	border:1px solid #e7e7e7;
+	background:none;
+	background:#fff;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd{
+	border-bottom:1px solid #e7e7e7;
+	color:#222222;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd:last-child{
+	border:none;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd:hover{
+	background:#e5e6e8;
+}
+.skin2 .newToolBarPart .tool ul.listBox .sjx{
+	background:url(../images/skin2/hbToolbarBg3.png) no-repeat center center;
+}
+
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd .icons01{
+	background:url(../images/skin2/hbToolbar08.png) no-repeat 6px center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd .icons02{
+	background:url(../images/skin2/hbToolbar09.png) no-repeat 6px center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd .icons03{
+	background:url(../images/skin2/hbToolbar10.png) no-repeat 6px center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd .icons04{
+	background:url(../images/skin2/hbToolbar11.png) no-repeat 6px center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd .icons05{
+	background:url(../images/skin2/hbToolbar12.png) no-repeat 6px center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd .icons06{
+	background:url(../images/skin2/hbToolbar13.png) no-repeat 6px center;
+}
+.skin2 .newToolBarPart .tool ul.listBox .layerLists dd .icons07{
+	background:url(../images/skin2/hbToolbar14.png) no-repeat 6px center;
+}
+
+
+/*图层二级菜单结束*/
+
+
+/*河北高速工具栏结束*/
+
+
+/*施工概况开始*/
+.skin2 .generalSituationofControlTabContent p{
+	color:#666;
+}
+.skin2 .constructionSituationTabContent .time{
+	color:#666;
+}
+/*施工概况结束*/
+
+/*管制概况开始*/
+.skin2 .constructionSituationTabContent p{
+	color:#666;
+}
+
+/*管制概况结束*/
+
+/*拥堵概况开始*/
+.skin2 .congestionSituationPart td{
+	color:#666;
+}
+
+/*拥堵概况结束*/
+
+
+/*环京流量开始*/
+.skin2 .surroundBJFlowPart  td{
+	color:#666;
+}
+
+/*环京流量结束*/
+
+/*省界流量开始*/
+.skin2 .provincialTrafficPart  td{
+	color:#666;
+}
+
+/*省界流量结束*/
+
+
+
+
+
+

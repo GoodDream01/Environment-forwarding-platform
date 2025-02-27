@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.sjcs.mvc.dao.SbztDao">
+
+	<select id="findByPage" resultType="com.dt.sjcs.mvc.pojo.Sbzt">
+		SELECT CONCAT(xtsj,',',TIMESTAMPDIFF(MINUTE,xtsj,TIME)) AS xtsj,CONCAT(sbsj,',',TIMESTAMPDIFF(HOUR,sbsj,TIME)) AS sbsj,
+		id,sbid,snh,rjbbh,zdsc,dqsc,dy,kzt,mnzt,szzt,sbwd,sim,time FROM sj_sbzt WHERE 1=1
+		<if test="param.sbbh!=null and param.sbbh!=''">
+			and FIND_IN_SET(sbid,#{param.sbbh})
+		</if>
+		<choose>
+			<when test="param.kssj != null and param.kssj != '' and param.jssj != null and param.jssj != ''">
+				and time between DATE_FORMAT(#{param.kssj},'%Y-%m-%d') and CONCAT(DATE_FORMAT(#{param.jssj},'%Y-%m-%d'),' 23:59:59')
+			</when>
+			<otherwise>
+				and time BETWEEN CONCAT(CURDATE(),' 00:00:00') AND CONCAT(CURDATE(),' 23:59:59')
+			</otherwise>
+		</choose>
+		<if test="param.sbid!=null and param.sbid!=''">
+			and sbid like concat(concat('%', #{param.sbid}), '%')
+		</if>
+		order by time desc
+	</select>
+
+</mapper>

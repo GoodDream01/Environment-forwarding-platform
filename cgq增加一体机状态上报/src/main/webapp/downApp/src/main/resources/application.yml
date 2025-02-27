@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: shirodemo
+server:
+  port: 8085
+  tomcat:
+    uri-encoding: utf-8
