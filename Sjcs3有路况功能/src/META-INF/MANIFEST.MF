@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.dt.sjcs.server.UdpEchoServer9026_3
+
